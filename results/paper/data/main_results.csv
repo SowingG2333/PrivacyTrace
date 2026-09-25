@@ -1,0 +1,7 @@
+arm,correct,slots,asr_pct
+Schema-only prior,12220,68000,17.971
+Full catalog,17852,68000,26.253
+Raw repeated trace,17954,68000,26.403
+Two-stage final,17561,68000,25.825
+Four-domain aggregate,5570,17000,32.765
+Single-server micro-average,43862,180965,24.238

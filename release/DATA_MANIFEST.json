@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "release": "iclr2027-v1",
+  "terms": "review-only; see REVIEW_LICENSE.md and DATA_CARD.md",
+  "archives": [
+    {
+      "name": "privacytrace-profiles-scenarios.tar.gz",
+      "bytes": 10421593,
+      "sha256": "29a0a1053c16645d526bfc02bb2e17b8562765a8f6fb46b1b7e62dabfc9c46f8"
+    },
+    {
+      "name": "privacytrace-trajectories.jsonl.gz",
+      "bytes": 692821810,
+      "sha256": "90b57e8f415090103a486ad1ca1f5c9ce41d3cd2a04d6185bab5d51fbe0e30b7"
+    },
+    {
+      "name": "privacytrace-evaluations.tar.gz",
+      "bytes": 105353400,
+      "sha256": "c7e513afa62c738772f9399dfe997e769d55e8da89fe824b4232c01781308017"
+    }
+  ],
+  "dataset": {
+    "profiles": 1000,
+    "profile_attributes": 17,
+    "scenarios": 4000,
+    "domains": {
+      "travel": 1000,
+      "health": 1000,
+      "shopping": 1000,
+      "career_learning": 1000
+    },
+    "trajectories": 4000,
+    "tool_records": 67950,
+    "mcp_executions": 66725,
+    "cache_hits": 1225
+  },
+  "models_and_execution_dates": [
+    {
+      "stage": "profile seed and Government-ID audits",
+      "model_id_or_alias": "glm-5.2 | glm5-2",
+      "provider_or_backend_version": "backend build not retained",
+      "execution_start_utc": "",
+      "execution_end_utc": "2026-08-06T14:44:59.869500+00:00",
+      "evidence_status": "model aliases and completion time frozen; start time absent"
+    },
+    {
+      "stage": "profile PII completion and repair",
+      "model_id_or_alias": "deepseek-v4-pro",
+      "provider_or_backend_version": "backend build not retained",
+      "execution_start_utc": "",
+      "execution_end_utc": "2026-08-06T14:44:59.869500+00:00",
+      "evidence_status": "model alias and completion time frozen; start time absent"
+    },
+    {
+      "stage": "scenario planner",
+      "model_id_or_alias": "deepseek-v4-flash",
+      "provider_or_backend_version": "backend build not retained",
+      "execution_start_utc": "",
+      "execution_end_utc": "2026-08-06T23:46:20.565375+00:00",
+      "evidence_status": "model alias/seed frozen per generation trace; start time absent"
+    },
+    {
+      "stage": "tool-using agent",
+      "model_id_or_alias": "deepseek-v4-flash (alias)",
+      "provider_or_backend_version": "deepseek-v4-flash-0731",
+      "execution_start_utc": "2026-08-07T10:50:13.093990+00:00",
+      "execution_end_utc": "2026-08-09T06:11:36.617259+00:00",
+      "evidence_status": "range recovered from retained trajectory timestamps"
+    },
+    {
+      "stage": "DeepSeek attack",
+      "model_id_or_alias": "deepseek-v4-flash-0731",
+      "provider_or_backend_version": "vllm-0.25.0-tp4-a913b050",
+      "execution_start_utc": "2026-08-09T13:53:14.213927+00:00",
+      "execution_end_utc": "2026-08-09T17:05:11.113520+00:00",
+      "evidence_status": "recovery manifest and per-request fingerprints"
+    },
+    {
+      "stage": "main semantic judge",
+      "model_id_or_alias": "glm-5.2 | glm5-2",
+      "provider_or_backend_version": "vllm-0.23.1rc1.dev1261+gc71a583aa-tp8-6999f78a | vllm-0.23.1rc1.dev1261+gc71a583aa-tp8-ea653578",
+      "execution_start_utc": "2026-08-10T15:53:06.881273+00:00",
+      "execution_end_utc": "2026-08-12T13:06:59.077451+00:00",
+      "evidence_status": "recovery manifest and per-request fingerprints"
+    },
+    {
+      "stage": "MiniMax attack",
+      "model_id_or_alias": "minimax-m3",
+      "provider_or_backend_version": "vllm-0.23.1rc1.dev229+g7a672233e-tp8-31fd7511 | vllm-0.23.1rc1.dev229+g7a672233e-tp8-68716505",
+      "execution_start_utc": "2026-08-14T07:05:22.236964+00:00",
+      "execution_end_utc": "2026-08-14T13:41:42.691038+00:00",
+      "evidence_status": "recovery manifest and per-request fingerprints"
+    },
+    {
+      "stage": "GPT attack",
+      "model_id_or_alias": "gpt-5.5",
+      "provider_or_backend_version": "provider fingerprint not returned",
+      "execution_start_utc": "2026-08-14T09:26:25.271796+00:00",
+      "execution_end_utc": "2026-08-14T19:48:27.754214+00:00",
+      "evidence_status": "recovery manifest"
+    },
+    {
+      "stage": "model-table judges",
+      "model_id_or_alias": "glm5-2",
+      "provider_or_backend_version": "provider fingerprints not returned",
+      "execution_start_utc": "2026-08-15T03:08:08.525784+00:00",
+      "execution_end_utc": "2026-08-17T10:25:44.206640+00:00",
+      "evidence_status": "per-model recovery manifests; range spans GPT/DeepSeek/MiniMax/Gemini judging"
+    },
+    {
+      "stage": "Gemini attack",
+      "model_id_or_alias": "gemini-3-flash-preview",
+      "provider_or_backend_version": "provider fingerprint not returned",
+      "execution_start_utc": "2026-08-17T09:18:53.243089+00:00",
+      "execution_end_utc": "2026-08-17T10:21:06.759729+00:00",
+      "evidence_status": "recovery manifest"
+    }
+  ],
+  "redactions": {
+    "identity_name_matches": 268,
+    "identity_account_matches": 0,
+    "affiliation_or_endpoint_matches": 46,
+    "source_workspace_matches": 7939,
+    "secret_or_token_matches": 28,
+    "local_home_path_matches": 216
+  },
+  "excluded": [
+    "manuscript source and author metadata",
+    "credentials and internal endpoint configuration",
+    "logs, recovery checkpoints, monitors, and smoke runs",
+    "legacy or failed judge variants",
+    "experiments not used by the reported paper tables",
+    "macOS AppleDouble files and generated caches"
+  ]
+}

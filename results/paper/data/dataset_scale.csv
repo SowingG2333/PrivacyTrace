@@ -1,0 +1,11 @@
+stage,count,unit
+Synthetic profiles,1000,profiles
+Structured candidates,100000,candidates
+Validated candidate pool,96538,candidates
+Scenarios,4000,tasks
+Tool trajectories,4000,trajectories
+Recorded tool events,67950,events
+MCP executions,66725,executions
+Cache hits,1225,events
+Distinct planned tools,115,tools
+Tool servers,25,servers

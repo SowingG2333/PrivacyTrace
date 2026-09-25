@@ -1,0 +1,65 @@
+{
+  "travel": {
+    "description": "Travel, local exploration, leisure, recreation, and outings.",
+    "core_servers": ["Geoapify", "Weather Data", "Time MCP", "Wikipedia", "National Parks", "Metropolitan Museum", "Movie Recommender", "Duffel Flight Search", "OneBusAway", "tickadoo"],
+    "tool_allowlists": {
+      "OneBusAway": [
+        "onebusaway_find_stops",
+        "onebusaway_search_routes",
+        "onebusaway_get_arrivals",
+        "onebusaway_get_schedule_for_stop",
+        "onebusaway_get_alert"
+      ],
+      "tickadoo": [
+        "search_experiences",
+        "get_experience_details",
+        "get_availability",
+        "whats_on_tonight"
+      ]
+    },
+    "coverage_note": "Directions, nearby places, weather, time, destination background, attractions, live bookable experiences, and search-only Duffel flight offers are available. OneBusAway adds real-time public transit for its Puget Sound deployment. Duffel test tokens return sandbox rather than realistic schedules and prices; rail and hotel coverage may still be incomplete."
+  },
+  "health": {
+    "description": "Health, well-being, symptoms, healthcare, pharmacy situations, and everyday health management.",
+    "core_servers": ["Geoapify", "BioMCP", "Wikipedia", "Medical Calculator", "FruityVice", "DailyMed MCP", "Open Food Facts", "OpenFDA"],
+    "tool_allowlists": {
+      "BioMCP": [
+        "think",
+        "article_searcher",
+        "article_getter",
+        "disease_getter",
+        "drug_getter"
+      ],
+      "Medical Calculator": [
+        "bmi_bsa_calculator",
+        "corrected_calcium",
+        "corrected_sodium",
+        "egfr_epi",
+        "map_calculator",
+        "pregnancy_calculator",
+        "steroid_conversion"
+      ],
+      "Open Food Facts": [
+        "off_search_products",
+        "off_get_product",
+        "off_compare_products"
+      ],
+      "OpenFDA": [
+        "openfda_drug_profile",
+        "openfda_search_recalls",
+        "openfda_search_device_clearances"
+      ]
+    },
+    "coverage_note": "Can locate care, retrieve biomedical background and official drug information, inspect packaged-food nutrition, search FDA recalls and device clearances, run specialized medical calculations, and inspect fruit nutrition. It cannot verify local drug inventory, make appointments, or replace professional diagnosis."
+  },
+  "shopping": {
+    "description": "Products, services, purchasing, comparison, replacement, and everyday spending decisions.",
+    "core_servers": ["Geoapify", "Reddit", "Wikipedia", "Car Price Evaluator", "Game Trends", "Keenable Web Search"],
+    "coverage_note": "Can locate stores and retrieve general, community, and live web information for product discovery and price research. It still has no stable retailer inventory or order-management integration."
+  },
+  "career_learning": {
+    "description": "Work, education, skills, employment, professional development, and career changes.",
+    "core_servers": ["Wikipedia", "Context7", "Hugging Face", "Paper Search", "Call for Papers", "Remoote Jobs"],
+    "coverage_note": "Can provide general background, software documentation, AI resources, papers, academic events, and read-only remote-job search. It still lacks community discussion search and a general course, school, or certification catalog."
+  }
+}

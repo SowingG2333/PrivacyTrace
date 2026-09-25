@@ -1,0 +1,2 @@
+release_assets/*.tar.gz filter=lfs diff=lfs merge=lfs -text
+release_assets/*.jsonl.gz filter=lfs diff=lfs merge=lfs -text

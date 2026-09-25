@@ -1,0 +1,5 @@
+model,correct,slots,asr_pct,ci95_low,ci95_high,generation_failed_views,unicode_false_positives_removed
+GPT-5.5,18888,68000,27.776,27.359,28.177,87,16
+DeepSeek-V4-Flash-0731,18358,68000,26.997,26.591,27.391,11,4
+MiniMax-M3,17196,68000,25.288,24.872,25.694,12,6
+Gemini-3-Flash-Preview,19254,68000,28.315,27.918,28.704,19,0

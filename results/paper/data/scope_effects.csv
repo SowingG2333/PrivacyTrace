@@ -1,0 +1,4 @@
+contrast,delta_pp,ci95_low,ci95_high,unit
+Single server vs paired schema,6.235,5.807,6.667,profile-balanced
+All servers vs single server,3.144,2.875,3.413,profile-balanced
+Four domains vs single-domain catalog,6.512,5.603,7.338,profile

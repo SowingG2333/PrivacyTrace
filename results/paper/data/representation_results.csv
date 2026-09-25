@@ -1,0 +1,3 @@
+representation,correct,slots,asr_pct,prompt_tokens_p50,prompt_tokens_p90,prompt_chars_p50,prompt_chars_p90,generation_failed_views
+Lossless catalog,17852,68000,26.253,30393,92271,117011,340217,11
+Raw repeated trace,17954,68000,26.403,37520,107413,137306,384869,13

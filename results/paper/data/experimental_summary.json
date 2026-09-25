@@ -1,0 +1,318 @@
+{
+  "schema_version": "1.0",
+  "paper_result_version": "posthoc-unicode-corrected",
+  "source_of_truth": "Unicode audit plus final experiment report; frozen JSON is validated and used for unaffected fields.",
+  "sources": [
+    "artifacts/privacy_experiments/deepseek_v4_flash_0731/evaluation/analysis/tool_call_privacy_analysis.json",
+    "artifacts/privacy_experiments/deepseek_v4_flash_0731/evaluation/analysis/pii_unicode_posthoc_audit.json",
+    "artifacts/privacy_experiments/deepseek_v4_flash_0731/evaluation/channel_ablation/analysis/channel_semantic_asr.json",
+    "artifacts/privacy_experiments/deepseek_v4_flash_0731/evaluation/attack_records.jsonl",
+    "artifacts/privacy_experiments/model_generalization_boyue_glm52/comparison.json",
+    "artifacts/profile_pool/generation_report.json",
+    "artifacts/scenario/combined_audit.json",
+    "artifacts/trajectories/combined_audit.json",
+    "artifacts/privacy_experiments/deepseek_v4_flash_0731/evaluation/analysis/experiment_report.md",
+    "artifacts/privacy_experiments/gpt_5_5/evaluation/attack_records.jsonl",
+    "artifacts/privacy_experiments/gpt_5_5/evaluation/judge_first",
+    "artifacts/privacy_experiments/deepseek_v4_flash_0731/evaluation/model_generalization_boyue/attack_records.jsonl",
+    "artifacts/privacy_experiments/deepseek_v4_flash_0731/evaluation/model_generalization_boyue/judge_first",
+    "artifacts/privacy_experiments/minimax_m3/evaluation/attack_records.jsonl",
+    "artifacts/privacy_experiments/minimax_m3/evaluation/judge_first",
+    "artifacts/privacy_experiments/gemini_3_flash_preview/evaluation/attack_records.jsonl",
+    "artifacts/privacy_experiments/gemini_3_flash_preview/evaluation/judge_first"
+  ],
+  "dataset": {
+    "profiles": 1000,
+    "profile_attributes": 17,
+    "countries": 26,
+    "scenarios": 4000,
+    "domains": {
+      "travel": 1000,
+      "health": 1000,
+      "shopping": 1000,
+      "career_learning": 1000
+    },
+    "trajectories": 4000,
+    "tool_records": 67950,
+    "mcp_executions": 66725,
+    "cache_hits": 1225,
+    "servers": 25
+  },
+  "main_results": [
+    {
+      "arm": "Schema-only prior",
+      "correct": 12220,
+      "slots": 68000,
+      "asr_pct": 17.971
+    },
+    {
+      "arm": "Full catalog",
+      "correct": 17852,
+      "slots": 68000,
+      "asr_pct": 26.253
+    },
+    {
+      "arm": "Raw repeated trace",
+      "correct": 17954,
+      "slots": 68000,
+      "asr_pct": 26.403
+    },
+    {
+      "arm": "Two-stage final",
+      "correct": 17561,
+      "slots": 68000,
+      "asr_pct": 25.825
+    },
+    {
+      "arm": "Four-domain aggregate",
+      "correct": 5570,
+      "slots": 17000,
+      "asr_pct": 32.765
+    },
+    {
+      "arm": "Single-server micro-average",
+      "correct": 43862,
+      "slots": 180965,
+      "asr_pct": 24.238
+    }
+  ],
+  "channel_results": [
+    {
+      "view": "Schema-only prior",
+      "correct": 12220,
+      "slots": 68000,
+      "asr_pct": 17.971
+    },
+    {
+      "view": "Metadata + sequence",
+      "correct": 9879,
+      "slots": 68000,
+      "asr_pct": 14.528
+    },
+    {
+      "view": "Metadata + sequence + parameters",
+      "correct": 18840,
+      "slots": 68000,
+      "asr_pct": 27.706
+    },
+    {
+      "view": "Metadata + sequence + results",
+      "correct": 16685,
+      "slots": 68000,
+      "asr_pct": 24.537
+    },
+    {
+      "view": "Full catalog",
+      "correct": 17852,
+      "slots": 68000,
+      "asr_pct": 26.253
+    }
+  ],
+  "channel_effects": [
+    {
+      "effect": "Parameters over metadata",
+      "delta_pp": 13.178,
+      "ci95_low": 12.768,
+      "ci95_high": 13.575,
+      "bootstrap_samples": 10000
+    },
+    {
+      "effect": "Results over metadata",
+      "delta_pp": 10.009,
+      "ci95_low": 9.616,
+      "ci95_high": 10.4,
+      "bootstrap_samples": 10000
+    },
+    {
+      "effect": "Parameter-result interaction",
+      "delta_pp": -11.462,
+      "ci95_low": -11.928,
+      "ci95_high": -11.001,
+      "bootstrap_samples": 10000
+    }
+  ],
+  "domain_results": [
+    {
+      "domain": "Career learning",
+      "catalog_asr_pct": 21.571,
+      "lift_pp": 3.6,
+      "ci95_low": 2.894,
+      "ci95_high": 4.3
+    },
+    {
+      "domain": "Health",
+      "catalog_asr_pct": 23.247,
+      "lift_pp": 5.4,
+      "ci95_low": 4.594,
+      "ci95_high": 6.218
+    },
+    {
+      "domain": "Shopping",
+      "catalog_asr_pct": 31.865,
+      "lift_pp": 13.718,
+      "ci95_low": 12.941,
+      "ci95_high": 14.494
+    },
+    {
+      "domain": "Travel",
+      "catalog_asr_pct": 28.329,
+      "lift_pp": 10.412,
+      "ci95_low": 9.665,
+      "ci95_high": 11.147
+    }
+  ],
+  "scope_effects": [
+    {
+      "contrast": "Single server vs paired schema",
+      "delta_pp": 6.235,
+      "ci95_low": 5.807,
+      "ci95_high": 6.667,
+      "unit": "profile-balanced"
+    },
+    {
+      "contrast": "All servers vs single server",
+      "delta_pp": 3.144,
+      "ci95_low": 2.875,
+      "ci95_high": 3.413,
+      "unit": "profile-balanced"
+    },
+    {
+      "contrast": "Four domains vs single-domain catalog",
+      "delta_pp": 6.512,
+      "ci95_low": 5.603,
+      "ci95_high": 7.338,
+      "unit": "profile"
+    }
+  ],
+  "pii_catalog": {
+    "name": {
+      "correct": 34,
+      "slots": 4000,
+      "asr_pct": 0.85,
+      "explicit_tool_parameter_evidence": 2
+    },
+    "phone_number": {
+      "correct": 1,
+      "slots": 4000,
+      "asr_pct": 0.025,
+      "explicit_tool_parameter_or_result_evidence": 0
+    },
+    "email": {
+      "correct": 0,
+      "slots": 4000,
+      "asr_pct": 0.0
+    },
+    "government_id": {
+      "correct": 0,
+      "slots": 4000,
+      "asr_pct": 0.0
+    }
+  },
+  "representation_results": [
+    {
+      "representation": "Lossless catalog",
+      "correct": 17852,
+      "slots": 68000,
+      "asr_pct": 26.253,
+      "prompt_tokens_p50": 30393,
+      "prompt_tokens_p90": 92271,
+      "prompt_chars_p50": 117011,
+      "prompt_chars_p90": 340217,
+      "generation_failed_views": 11
+    },
+    {
+      "representation": "Raw repeated trace",
+      "correct": 17954,
+      "slots": 68000,
+      "asr_pct": 26.403,
+      "prompt_tokens_p50": 37520,
+      "prompt_tokens_p90": 107413,
+      "prompt_chars_p50": 137306,
+      "prompt_chars_p90": 384869,
+      "generation_failed_views": 13
+    }
+  ],
+  "two_stage": {
+    "stage1_inferred_only": {
+      "correct": 5324,
+      "slots": 68000,
+      "asr_pct": 7.829,
+      "coverage_slots": 11600,
+      "precision_pct": 45.897
+    },
+    "stage2_on_stage1_unresolved": {
+      "correct": 12237,
+      "slots": 56179,
+      "asr_pct": 21.782
+    },
+    "schema_prior_on_same_unresolved_subset": {
+      "correct": 10384,
+      "slots": 56179,
+      "asr_pct": 18.484
+    },
+    "stage2_minus_schema_on_unresolved": {
+      "observed_delta_pp": 3.298,
+      "profile_clustered_delta_pp": 3.381,
+      "ci95_pp": [
+        2.93,
+        3.846
+      ]
+    },
+    "two_stage_final": {
+      "correct": 17561,
+      "slots": 68000,
+      "asr_pct": 25.825
+    },
+    "interpretation": "The positive Stage 2 versus schema-only contrast on the same Stage 1-unresolved subset is consistent with some additional signal from conditioning on Stage 1 outputs. It is not an additive source decomposition, a causal posterior contribution, or an estimate of the fraction of final ASR due to posterior inference. Stage 2 and schema are independent temperature-1 generations, and the bootstrap does not cover rerun stochasticity.",
+    "stage1_scoring_note": "The frozen Stage 1 scorer counted one unresolved None/None edge as correct; inferred-only Stage 1 ASR treats abstention as incorrect."
+  },
+  "model_generalization": [
+    {
+      "model": "GPT-5.5",
+      "correct": 18888,
+      "slots": 68000,
+      "asr_pct": 27.776,
+      "ci95_low": 27.359,
+      "ci95_high": 28.177,
+      "generation_failed_views": 87,
+      "unicode_false_positives_removed": 16
+    },
+    {
+      "model": "DeepSeek-V4-Flash-0731",
+      "correct": 18358,
+      "slots": 68000,
+      "asr_pct": 26.997,
+      "ci95_low": 26.591,
+      "ci95_high": 27.391,
+      "generation_failed_views": 11,
+      "unicode_false_positives_removed": 4
+    },
+    {
+      "model": "MiniMax-M3",
+      "correct": 17196,
+      "slots": 68000,
+      "asr_pct": 25.288,
+      "ci95_low": 24.872,
+      "ci95_high": 25.694,
+      "generation_failed_views": 12,
+      "unicode_false_positives_removed": 6
+    },
+    {
+      "model": "Gemini-3-Flash-Preview",
+      "correct": 19254,
+      "slots": 68000,
+      "asr_pct": 28.315,
+      "ci95_low": 27.918,
+      "ci95_high": 28.704,
+      "generation_failed_views": 19,
+      "unicode_false_positives_removed": 0
+    }
+  ],
+  "statistical_protocol": {
+    "main_bootstrap_samples": 5000,
+    "channel_bootstrap_samples": 10000,
+    "cluster": "profile_id",
+    "interval": "95% percentile bootstrap",
+    "failed_or_missing_predictions": "incorrect and retained in the denominator"
+  }
+}

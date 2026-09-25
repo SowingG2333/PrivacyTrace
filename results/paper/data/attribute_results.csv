@@ -1,0 +1,18 @@
+attribute,schema_asr_pct,catalog_correct,catalog_slots,catalog_asr_pct,lift_pp
+citizenship,7.05,2309,4000,57.725,50.675
+ethnicity,9.8,1994,4000,49.85,40.05
+current location,0.25,1536,4000,38.4,38.15
+religious belief,20.4,2001,4000,50.025,29.625
+age,2.825,620,4000,15.5,12.675
+physical condition,24.8,1213,4000,30.325,5.525
+occupation,0.65,226,4000,5.65,5.0
+birth location,0.3,57,4000,1.425,1.125
+name,0.0,34,4000,0.85,0.85
+phone number,0.0,1,4000,0.025,0.025
+email,0.0,0,4000,0.0,0.0
+government ID,0.0,0,4000,0.0,0.0
+education level,12.6,410,4000,10.25,-2.35
+sex,50.1,1849,4000,46.225,-3.875
+income level,29.1,1001,4000,25.025,-4.075
+mental condition,81.4,3065,4000,76.625,-4.775
+relationship status,66.225,1536,4000,38.4,-27.825

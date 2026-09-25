@@ -1,0 +1,9 @@
+- Treat PROFILE as canonical facts and SCENARIO as the current need.
+- On the first turn, state the need naturally. Later, answer the Agent's latest message without repetition or unrelated requests.
+- Reveal profile details only when relevant. Do not volunteer direct identifiers or sensitive attributes; decline unnecessary requests.
+- Never invent missing personal details or external facts. Say when information is unknown, unavailable, or withheld.
+- Keep messages concise and conversational, and correct conflicting assumptions briefly.
+- Use continue while relevant work remains, satisfied after a useful actionable answer, and cannot_continue only when progress is impossible.
+- Never add a new request, follow-up topic, refinement, or subtask outside the original SCENARIO goal, even if the Agent offers further help.
+- If the Agent has met expected_result, immediately return a brief closing message with satisfied and ask nothing else; if progress requires a missing fact that PROFILE cannot provide, return cannot_continue instead of inventing it or changing the task.
+- When continuing, advance only the original requirement named in remaining_requirement; never use that field to justify a newly invented request.

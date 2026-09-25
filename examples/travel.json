@@ -1,0 +1,213 @@
+{
+  "notice": "Synthetic offline example; direct identifiers are not real.",
+  "profile_id": "P0001",
+  "profile": {
+    "age": 37,
+    "sex": "male",
+    "ethnicity": "South Asian",
+    "citizenship": "India",
+    "current_location": "Salem, India",
+    "birth_location": "Bhiwadi, India",
+    "education_level": "bachelor",
+    "income_level": "middle",
+    "relationship_status": "married",
+    "religious_belief": "Hindu",
+    "occupation": "forestry worker",
+    "physical_condition": "tension-type headache",
+    "mental_condition": "None",
+    "name": "Ravi Kumar",
+    "email": "kumar.forestry@example.com",
+    "phone_number": "+91-94433-12987",
+    "government_id": "234567891238"
+  },
+  "scenario": {
+    "scenario_id": "S0001",
+    "profile_id": "P0001",
+    "domain": "travel",
+    "user_task": {
+      "goal": "Plan a short leisure trip to a well-known national park in South India, including checking the weather forecast for the travel dates.",
+      "context": "Ravi wants to take a short break with his spouse to a national park known for its biodiversity and Hindu cultural heritage, such as Bandipur or Mudumalai. He wants to check the expected weather for the park area to pack appropriately.",
+      "constraints": [
+        "Trip duration: 2-3 days, likely this weekend",
+        "Interested in wildlife and cultural heritage aspects",
+        "Should consider weather conditions"
+      ],
+      "expected_result": "Recommend a specific national park with details (location, notable features), a summary of its significance, and a weather forecast for the intended travel dates."
+    },
+    "evaluation_criteria": [
+      "The assistant fulfills the user's goal: Plan a short leisure trip to a well-known national park in South India, including checking the weather forecast for the travel dates.",
+      "The delivered result satisfies: Recommend a specific national park with details (location, notable features), a summary of its significance, and a weather forecast for the intended travel dates.",
+      "External factual claims are grounded in successful relevant MCP tool results."
+    ]
+  },
+  "trajectory_excerpt": {
+    "schema_version": "2.0",
+    "scenario_id": "S0001",
+    "profile_id": "P0001",
+    "domain": "travel",
+    "status": "satisfied",
+    "termination_reason": "simulator_satisfied",
+    "total_tool_calls": 15,
+    "metrics": {
+      "assistant_turns": 2,
+      "tool_calls": 15,
+      "usable_tool_calls": 15,
+      "tool_success_rate": 1.0,
+      "empty_tool_calls": 0,
+      "application_error_calls": 0,
+      "transport_error_calls": 0,
+      "repeated_tool_calls": 0,
+      "same_tool_reuses": 6,
+      "agent_tokens": 165776,
+      "simulator_tokens": 5354,
+      "total_known_tokens": 171130,
+      "total_tokens": 165776
+    },
+    "evaluation": {
+      "evaluator": "deterministic",
+      "passed": true,
+      "checks": {
+        "conversation_closed_by_user": true,
+        "assistant_produced_response": true,
+        "no_agent_error": true,
+        "tool_results_were_usable": true
+      },
+      "metrics": {
+        "assistant_turns": 2,
+        "tool_calls": 15,
+        "usable_tool_calls": 15,
+        "tool_success_rate": 1.0,
+        "empty_tool_calls": 0,
+        "application_error_calls": 0,
+        "transport_error_calls": 0,
+        "repeated_tool_calls": 0,
+        "same_tool_reuses": 6,
+        "agent_tokens": 165776,
+        "simulator_tokens": 5354,
+        "total_known_tokens": 171130,
+        "total_tokens": 165776
+      },
+      "note": "Diagnostics are not a replacement for domain-specific or LLM-judge evaluation."
+    },
+    "tools_info": [
+      {
+        "tool": "findParks",
+        "server": "National Parks",
+        "parameters": {
+          "q": "Bandipur",
+          "limit": 5
+        },
+        "round_num": 1,
+        "call_id": "6d6f5250_000001",
+        "provider_call_id": "chatcmpl-tool-86cdd2f4c304c3b0",
+        "call_order": 1,
+        "timestamp": 1786099830.557943,
+        "server_name": "National Parks",
+        "tool_name": "findParks",
+        "tool_description": "Search for national parks based on state, name, activities, or other criteria",
+        "tool_schema": {
+          "type": "object",
+          "properties": {
+            "stateCode": {
+              "type": "string",
+              "description": "Filter parks by state code (e.g., \"CA\" for California, \"NY\" for New York). Multiple states can be comma-separated (e.g., \"CA,OR,WA\")"
+            },
+            "q": {
+              "type": "string",
+              "description": "Search term to filter parks by name or description"
+            },
+            "limit": {
+              "type": "number",
+              "description": "Maximum number of parks to return (default: 10, max: 50)"
+            },
+            "start": {
+              "type": "number",
+              "description": "Start position for results (useful for pagination)"
+            },
+            "activities": {
+              "type": "string",
+              "description": "Filter by available activities (e.g., \"hiking,camping\")"
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "call_statement": {
+          "q": "Bandipur",
+          "limit": 5
+        },
+        "tool_call_signature": "[\"National Parks\",\"findParks\",\"{\\\"limit\\\":5,\\\"q\\\":\\\"Bandipur\\\"}\"]",
+        "success": true,
+        "returned_result": "{\"total\": 0, \"limit\": 5, \"start\": 0, \"parks\": []}",
+        "latency_ms": 1913.7426250090357,
+        "transport_success": true,
+        "content_success": true,
+        "outcome": "success",
+        "result_source": "mcp",
+        "cache_hit": false,
+        "mcp_executed": true,
+        "duplicate_call_count": 1,
+        "result": "{\"total\": 0, \"limit\": 5, \"start\": 0, \"parks\": []}"
+      },
+      {
+        "tool": "findParks",
+        "server": "National Parks",
+        "parameters": {
+          "q": "Mudumalai",
+          "limit": 5
+        },
+        "round_num": 1,
+        "call_id": "6d6f5250_000002",
+        "provider_call_id": "chatcmpl-tool-aa31a37f65d7a5f1",
+        "call_order": 2,
+        "timestamp": 1786099830.5581708,
+        "server_name": "National Parks",
+        "tool_name": "findParks",
+        "tool_description": "Search for national parks based on state, name, activities, or other criteria",
+        "tool_schema": {
+          "type": "object",
+          "properties": {
+            "stateCode": {
+              "type": "string",
+              "description": "Filter parks by state code (e.g., \"CA\" for California, \"NY\" for New York). Multiple states can be comma-separated (e.g., \"CA,OR,WA\")"
+            },
+            "q": {
+              "type": "string",
+              "description": "Search term to filter parks by name or description"
+            },
+            "limit": {
+              "type": "number",
+              "description": "Maximum number of parks to return (default: 10, max: 50)"
+            },
+            "start": {
+              "type": "number",
+              "description": "Start position for results (useful for pagination)"
+            },
+            "activities": {
+              "type": "string",
+              "description": "Filter by available activities (e.g., \"hiking,camping\")"
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "call_statement": {
+          "q": "Mudumalai",
+          "limit": 5
+        },
+        "tool_call_signature": "[\"National Parks\",\"findParks\",\"{\\\"limit\\\":5,\\\"q\\\":\\\"Mudumalai\\\"}\"]",
+        "success": true,
+        "returned_result": "{\"total\": 1, \"limit\": 5, \"start\": 0, \"parks\": [{\"name\": \"Padre Island National Seashore\", \"code\": \"pais\", \"description\": \"Protecting sixty-six miles of wild coastline along the Gulf of America, the narrow barrier island is home to one of the last intact coastal prairie habitats in the United States. Along the hypersaline Laguna Madre, tidal mud flats teem with life. Native Americans, Spanish explorers and cattle ranchers have walked along its shores. Padre Island National Seashore is waiting to be rediscovered.\", \"states\": [\"TX\"], \"url\": \"https://www.nps.gov/pais/index.htm\", \"designation\": \"National Seashore\", \"activities\": [\"Arts and Culture\", \"Auto and ATV\", \"Auto Off-Roading\", \"Astronomy\", \"Stargazing\", \"Biking\", \"Boating\", \"Camping\", \"Backcountry Camping\", \"Car or Front Country Camping\", \"RV Camping\", \"Fishing\", \"Saltwater Fishing\", \"Paddling\", \"Canoeing\", \"Kayaking\", \"Junior Ranger Program\", \"Swimming\", \"Saltwater Swimming\", \"Wildlife Watching\", \"Birdwatching\", \"Park Film\", \"Museum Exhibits\", \"Shopping\", \"Bookstore and Park Store\"], \"weatherInfo\": \"Padre Island has long, hot summers and short, mild winters. Summers are very humid. Winter can bring strong cold fronts and gale force winds. Most rain falls near the beginning and end of hurricane season (Jun 1 - Nov 30). Average seasonal temperatures (Fahrenheit): Spring - high 70s-80s, low 50s-60s; Summer - high mid-90s, low 70s; Fall - high 70s-80s, low 50s-60s; Winter - high 50s-70s, low 30s-40s. Year-round, average wind speed ranges from 5-25 miles per hour. Relative humidity seldom drops below 70%.\", \"location\": {\"latitude\": \"27.05381186\", \"longitude\": \"-97.35901135\"}, \"entranceFees\": [{\"cost\": \"25.00\", \"description\": \"Pass is valid for the day of purchase and the next six days for a vehicle carrying the same group of passengers. The entry fees of commercial tours are based upon the total capacity of vehicles that can carry seven or more passengers regardless of the actual number of passengers.\", \"title\": \"Commercial Entrance - Sedan\"}, {\"cost\": \"40.00\", \"description\": \"Pass is valid for the day of purchase and the next six days for a vehicle carrying the same group of passengers. The entry fees of commercial tours are based upon the total capacity of vehicles that can carry seven or more passengers regardless of the actual number of passengers.\", \"title\": \"Commercial Entrance - Van\"}, {\"cost\": \"40.00\", \"description\": \"Pass is valid for the day of purchase and the next six days for a vehicle carrying the same group of passengers. The entry fees of commercial tours are based upon the total capacity of vehicles that can carry seven or more passengers regardless of the actual number of passengers.\", \"title\": \"Commercial Entrance - Mini-bus\"}, {\"cost\": \"100.00\", \"description\": \"Pass is valid for the day of purchase and the next six days for a vehicle carrying the same group of passengers. The entry fees of commercial tours are based upon the total capacity of vehicles that can carry seven or more passengers regardless of the actual number of passengers.\", \"title\": \"Commercial Entrance - Motor Coach\"}, {\"cost\": \"25.00\", \"description\": \"Admits the passholder and up to 15 passengers in the same private (non-commercial) vehicle. It expires one week from the date of purchase. For private vehicles, this entrance pass is required for overnight camping. \\n\\nA 1-day entrance pass is available for $10 per vehicle. 1-day entrance passes expire at midnight on the date of purchase and are not valid for overnight camping.\", \"title\": \"Entrance - Private Vehicle\"}, {\"cost\": \"20.00\", \"description\": \"Valid for 7 days. Admits up to 2 private, non-commercial motorcycles with up to 4 total passengers. For motorcyclists, this entrance pass is required for overnight camping.\\n\\nA 1-day entrance pass is available for $5. 1-day entrance passes expire at midnight on the date of purchase and are not valid for overnight camping.\", \"title\": \"Entrance - Motorcycle\"}, {\"cost\": \"15.00\", \"description\": \"Admits one individual bicyclist, hiker, or pedestrian visiting the facility without a private vehicle. An individual pass is not required for visitors aged 15 and under. It expires one week from the date of purchase. For an individual, this entrance pass is required for overnight camping. \\n\\nA 1-day entrance pass is available for $5 per person. 1-day entrance passes expire at midnight on the date of purchase and are not valid for overnight camping.\", \"title\": \"Entrance - Per Person\"}, {\"cost\": \"15.00\", \"description\": \"Non-commercial groups traveling in a vehicle with a capacity of 16 persons or more are charged per person. This entrance pass is valid for one week from the date of purchase. Fees will not exceed the commercial fee for the same-sized vehicle. Youth 15 and younger are free. Individuals or families with any valid Annual or Lifetime pass may use their pass for entry.\", \"title\": \"Entrance - Non-commercial Groups\"}], \"operatingHours\": [{\"name\": \"Overall park access hours\", \"description\": \"The park is open 24 hours per day, 365 days per year. However, park facilities are not open 24 hours per day. Hours for the entrance station, where the required entrance pass is sold, vary from day to day. If the entrance station is not open when you arrive, you can proceed into the park. If you are camping, go back to the entrance station the next morning and obtain an entrance pass. If not camping, pay the entrance fee as you leave if the entrance station is open.\", \"standardHours\": {\"wednesday\": \"All Day\", \"monday\": \"All Day\", \"thursday\": \"All Day\", \"sunday\": \"All Day\", \"tuesday\": \"All Day\", \"friday\": \"All Day\", \"saturday\": \"All Day\"}}], \"contacts\": {\"phoneNumbers\": [{\"type\": \"Voice\", \"number\": \"(361) 949-8068\", \"description\": \"\"}], \"emailAddresses\": [{\"address\": \"pais_visitor_center@nps.gov\", \"description\": \"This is the primary park e-mail address for visitors to ask questions and get information about the park.\"}]}, \"images\": [{\"url\": \"https://www.nps.gov/common/uploads/structured_data/F771AB23-E1E9-0B08-C7765B725C3EB41F.jpg\", \"title\": \"Malaquite Beach\", \"altText\": \"Yellow flowers bloom in the dunes along Malaquite Beach.\", \"caption\": \"Yellow flowers bloom in the dunes along Malaquite Beach.\", \"credit\": \"NPS Photo/ Thomas DiGiovannangelo\"}, {\"url\": \"https://www.nps.gov/common/uploads/structured_data/F7900E38-FCAE-4EEA-D5B1AAA5DBC5E9FD.jpg\", \"title\": \"Shells on South Beach\", \"altText\": \"Small shell fragments in the sand long the beach.\", \"caption\": \"Depending on the conditions, shells can be found along the gulf beaches.\", \"credit\": \"NPS Photo/ Sue Wolfe\"}, {\"url\": \"https://www.nps.gov/common/uploads/structured_data/F7A5E23B-DBC0-0796-20E363DA0EEE8E4F.jpg\", \"title\": \"Deer in the grasslands\", \"altText\": \"Two deer feed on grass. Their antlers have velvet on them.\", \"caption\": \"Deer can often be seen foraging in the grasslands.\", \"credit\": \"NPS Photo/ Kara Rogers\"}, {\"url\": \"https://www.nps.gov/common/uploads/structured_data/F7C767DB-BA6D-C805-366B872B0E9445E3.jpg\", \"title\": \"Kemps hatchlings\", \"altText\": \"Several sea turtle hatchlings crawl on the sand towards the Gulf of Mexico.\", \"caption\": \"Attending a sea turtle hatchling release is a popular activity in the mid-summer.\", \"credit\": \"NPS Photo\"}, {\"url\": \"https://www.nps.gov/common/uploads/structured_data/F7DE28FF-0C7B-D1A6-A2B59F59E077B2AA.jpg\", \"title\": \"Crested Caracara\", \"altText\": \"A hawk like bird with an orange beak stands on a fence post.\", \"caption\": \"The crested caracara, also known as the Mexican eagle, can be found year-round in the park.\", \"credit\": \"NPS Photo/ Sue Wolfe\"}, {\"url\": \"https://www.nps.gov/common/uploads/structured_data/F7F76985-0C29-9380-1EFF50A68316857B.jpg\", \"title\": \"Novillo Line Camp\", \"altText\": \"Small wooden structures are seen looking through a wood fence.\", \"caption\": \"The historic Novillo Line Camp provides a window into the island's past ranching history.\", \"credit\": \"NPS Photo\"}, {\"url\": \"https://www.nps.gov/common/uploads/structured_data/F8085A14-E332-1292-E511D3DD9168341E.jpg\", \"title\": \"Brown Pelican\", \"altText\": \"Several brown pelicans stand on the sand next to the edge of the sea.\", \"caption\": \"Brown pelicans can often be seen along the Gulf of Mexico.\", \"credit\": \"NPS Photo/ Sue Wolfe\"}]}]}",
+        "latency_ms": 1928.2222090114374,
+        "transport_success": true,
+        "content_success": true,
+        "outcome": "success",
+        "result_source": "mcp",
+        "cache_hit": false,
+        "mcp_executed": true,
+        "duplicate_call_count": 1,
+        "result": "{\"total\": 1, \"limit\": 5, \"start\": 0, \"parks\": [{\"name\": \"Padre Island National Seashore\", \"code\": \"pais\", \"description\": \"Protecting sixty-six miles of wild coastline along the Gulf of America, the narrow barrier island is home to one of the last intact coastal prairie habitats in the United States. Along the hypersaline Laguna Madre, tidal mud flats teem with life. Native Americans, Spanish explorers and cattle ranchers have walked along its shores. Padre Island National Seashore is waiting to be rediscovered.\", \"states\": [\"TX\"], \"url\": \"https://www.nps.gov/pais/index.htm\", \"designation\": \"National Seashore\", \"activities\": [\"Arts and Culture\", \"Auto and ATV\", \"Auto Off-Roading\", \"Astronomy\", \"Stargazing\", \"Biking\", \"Boating\", \"Camping\", \"Backcountry Camping\", \"Car or Front Country Camping\", \"RV Camping\", \"Fishing\", \"Saltwater Fishing\", \"Paddling\", \"Canoeing\", \"Kayaking\", \"Junior Ranger Program\", \"Swimming\", \"Saltwater Swimming\", \"Wildlife Watching\", \"Birdwatching\", \"Park Film\", \"Museum Exhibits\", \"Shopping\", \"Bookstore and Park Store\"], \"weatherInfo\": \"Padre Island has long, hot summers and short, mild winters. Summers are very humid. Winter can bring strong cold fronts and gale force winds. Most rain falls near the beginning and end of hurricane season (Jun 1 - Nov 30). Average seasonal temperatures (Fahrenheit): Spring - high 70s-80s, low 50s-60s; Summer - high mid-90s, low 70s; Fall - high 70s-80s, low 50s-60s; Winter - high 50s-70s, low 30s-40s. Year-round, average wind speed ranges from 5-25 miles per hour. Relative humidity seldom drops below 70%.\", \"location\": {\"latitude\": \"27.05381186\", \"longitude\": \"-97.35901135\"}, \"entranceFees\": [{\"cost\": \"25.00\", \"description\": \"Pass is valid for the day of purchase and the next six days for a vehicle carrying the same group of passengers. The entry fees of commercial tours are based upon the total capacity of vehicles that can carry seven or more passengers regardless of the actual number of passengers.\", \"title\": \"Commercial Entrance - Sedan\"}, {\"cost\": \"40.00\", \"description\": \"Pass is valid for the day of purchase and the next six days for a vehicle carrying the same group of passengers. The entry fees of commercial tours are based upon the total capacity of vehicles that can carry seven or more passengers regardless of the actual number of passengers.\", \"title\": \"Commercial Entrance - Van\"}, {\"cost\": \"40.00\", \"description\": \"Pass is valid for the day of purchase and the next six days for a vehicle carrying the same group of passengers. The entry fees of commercial tours are based upon the total capacity of vehicles that can carry seven or more passengers regardless of the actual number of passengers.\", \"title\": \"Commercial Entrance - Mini-bus\"}, {\"cost\": \"100.00\", \"description\": \"Pass is valid for the day of purchase and the next six days for a vehicle carrying the same group of passengers. The entry fees of commercial tours are based upon the total capacity of vehicles that can carry seven or more passengers regardless of the actual number of passengers.\", \"title\": \"Commercial Entrance - Motor Coach\"}, {\"cost\": \"25.00\", \"description\": \"Admits the passholder and up to 15 passengers in the same private (non-commercial) vehicle. It expires one week from the date of purchase. For private vehicles, this entrance pass is required for overnight camping. \\n\\nA 1-day entrance pass is available for $10 per vehicle. 1-day entrance passes expire at midnight on the date of purchase and are not valid for overnight camping.\", \"title\": \"Entrance - Private Vehicle\"}, {\"cost\": \"20.00\", \"description\": \"Valid for 7 days. Admits up to 2 private, non-commercial motorcycles with up to 4 total passengers. For motorcyclists, this entrance pass is required for overnight camping.\\n\\nA 1-day entrance pass is available for $5. 1-day entrance passes expire at midnight on the date of purchase and are not valid for overnight camping.\", \"title\": \"Entrance - Motorcycle\"}, {\"cost\": \"15.00\", \"description\": \"Admits one individual bicyclist, hiker, or pedestrian visiting the facility without a private vehicle. An individual pass is not required for visitors aged 15 and under. It expires one week from the date of purchase. For an individual, this entrance pass is required for overnight camping. \\n\\nA 1-day entrance pass is available for $5 per person. 1-day entrance passes expire at midnight on the date of purchase and are not valid for overnight camping.\", \"title\": \"Entrance - Per Person\"}, {\"cost\": \"15.00\", \"description\": \"Non-commercial groups traveling in a vehicle with a capacity of 16 persons or more are charged per person. This entrance pass is valid for one week from the date of purchase. Fees will not exceed the commercial fee for the same-sized vehicle. Youth 15 and younger are free. Individuals or families with any valid Annual or Lifetime pass may use their pass for entry.\", \"title\": \"Entrance - Non-commercial Groups\"}], \"operatingHours\": [{\"name\": \"Overall park access hours\", \"description\": \"The park is open 24 hours per day, 365 days per year. However, park facilities are not open 24 hours per day. Hours for the entrance station, where the required entrance pass is sold, vary from day to day. If the entrance station is not open when you arrive, you can proceed into the park. If you are camping, go back to the entrance station the next morning and obtain an entrance pass. If not camping, pay the entrance fee as you leave if the entrance station is open.\", \"standardHours\": {\"wednesday\": \"All Day\", \"monday\": \"All Day\", \"thursday\": \"All Day\", \"sunday\": \"All Day\", \"tuesday\": \"All Day\", \"friday\": \"All Day\", \"saturday\": \"All Day\"}}], \"contacts\": {\"phoneNumbers\": [{\"type\": \"Voice\", \"number\": \"(361) 949-8068\", \"description\": \"\"}], \"emailAddresses\": [{\"address\": \"pais_visitor_center@nps.gov\", \"description\": \"This is the primary park e-mail address for visitors to ask questions and get information about the park.\"}]}, \"images\": [{\"url\": \"https://www.nps.gov/common/uploads/structured_data/F771AB23-E1E9-0B08-C7765B725C3EB41F.jpg\", \"title\": \"Malaquite Beach\", \"altText\": \"Yellow flowers bloom in the dunes along Malaquite Beach.\", \"caption\": \"Yellow flowers bloom in the dunes along Malaquite Beach.\", \"credit\": \"NPS Photo/ Thomas DiGiovannangelo\"}, {\"url\": \"https://www.nps.gov/common/uploads/structured_data/F7900E38-FCAE-4EEA-D5B1AAA5DBC5E9FD.jpg\", \"title\": \"Shells on South Beach\", \"altText\": \"Small shell fragments in the sand long the beach.\", \"caption\": \"Depending on the conditions, shells can be found along the gulf beaches.\", \"credit\": \"NPS Photo/ Sue Wolfe\"}, {\"url\": \"https://www.nps.gov/common/uploads/structured_data/F7A5E23B-DBC0-0796-20E363DA0EEE8E4F.jpg\", \"title\": \"Deer in the grasslands\", \"altText\": \"Two deer feed on grass. Their antlers have velvet on them.\", \"caption\": \"Deer can often be seen foraging in the grasslands.\", \"credit\": \"NPS Photo/ Kara Rogers\"}, {\"url\": \"https://www.nps.gov/common/uploads/structured_data/F7C767DB-BA6D-C805-366B872B0E9445E3.jpg\", \"title\": \"Kemps hatchlings\", \"altText\": \"Several sea turtle hatchlings crawl on the sand towards the Gulf of Mexico.\", \"caption\": \"Attending a sea turtle hatchling release is a popular activity in the mid-summer.\", \"credit\": \"NPS Photo\"}, {\"url\": \"https://www.nps.gov/common/uploads/structured_data/F7DE28FF-0C7B-D1A6-A2B59F59E077B2AA.jpg\", \"title\": \"Crested Caracara\", \"altText\": \"A hawk like bird with an orange beak stands on a fence post.\", \"caption\": \"The crested caracara, also known as the Mexican eagle, can be found year-round in the park.\", \"credit\": \"NPS Photo/ Sue Wolfe\"}, {\"url\": \"https://www.nps.gov/common/uploads/structured_data/F7F76985-0C29-9380-1EFF50A68316857B.jpg\", \"title\": \"Novillo Line Camp\", \"altText\": \"Small wooden structures are seen looking through a wood fence.\", \"caption\": \"The historic Novillo Line Camp provides a window into the island's past ranching history.\", \"credit\": \"NPS Photo\"}, {\"url\": \"https://www.nps.gov/common/uploads/structured_data/F8085A14-E332-1292-E511D3DD9168341E.jpg\", \"title\": \"Brown Pelican\", \"altText\": \"Several brown pelicans stand on the sand next to the edge of the sea.\", \"caption\": \"Brown pelicans can often be seen along the Gulf of Mexico.\", \"credit\": \"NPS Photo/ Sue Wolfe\"}]}]}"
+      }
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+view,correct,slots,asr_pct
+Schema-only prior,12220,68000,17.971
+Metadata + sequence,9879,68000,14.528
+Metadata + sequence + parameters,18840,68000,27.706
+Metadata + sequence + results,16685,68000,24.537
+Full catalog,17852,68000,26.253

@@ -1,0 +1,207 @@
+{
+  "notice": "Synthetic offline example; direct identifiers are not real.",
+  "profile_id": "P0001",
+  "profile": {
+    "age": 37,
+    "sex": "male",
+    "ethnicity": "South Asian",
+    "citizenship": "India",
+    "current_location": "Salem, India",
+    "birth_location": "Bhiwadi, India",
+    "education_level": "bachelor",
+    "income_level": "middle",
+    "relationship_status": "married",
+    "religious_belief": "Hindu",
+    "occupation": "forestry worker",
+    "physical_condition": "tension-type headache",
+    "mental_condition": "None",
+    "name": "Ravi Kumar",
+    "email": "kumar.forestry@example.com",
+    "phone_number": "+91-94433-12987",
+    "government_id": "234567891238"
+  },
+  "scenario": {
+    "scenario_id": "S0004",
+    "profile_id": "P0001",
+    "domain": "career_learning",
+    "user_task": {
+      "goal": "Compile a concise overview of current best practices in sustainable forestry management, highlighting key techniques and recent research.",
+      "context": "Ravi, a 37-year-old forestry worker in Salem, India, wants to improve his professional knowledge and career prospects in the forestry sector. He is aware that sustainable practices are increasingly important and wants to learn what experts recommend.",
+      "constraints": [
+        "Focus on sustainable forestry management practices relevant to India or tropical regions.",
+        "Prefer recent research and authoritative sources.",
+        "Provide a summary that a high-school-educated worker can understand."
+      ],
+      "expected_result": "A short document summarizing at least three sustainable forestry management techniques, referencing key research papers and a Wikipedia overview."
+    },
+    "evaluation_criteria": [
+      "The assistant fulfills the user's goal: Compile a concise overview of current best practices in sustainable forestry management, highlighting key techniques and recent research.",
+      "The delivered result satisfies: A short document summarizing at least three sustainable forestry management techniques, referencing key research papers and a Wikipedia overview.",
+      "External factual claims are grounded in successful relevant MCP tool results."
+    ]
+  },
+  "trajectory_excerpt": {
+    "schema_version": "2.0",
+    "scenario_id": "S0004",
+    "profile_id": "P0001",
+    "domain": "career_learning",
+    "status": "satisfied",
+    "termination_reason": "simulator_satisfied",
+    "total_tool_calls": 21,
+    "metrics": {
+      "assistant_turns": 1,
+      "tool_calls": 21,
+      "usable_tool_calls": 14,
+      "tool_success_rate": 0.6667,
+      "empty_tool_calls": 7,
+      "application_error_calls": 0,
+      "transport_error_calls": 0,
+      "repeated_tool_calls": 0,
+      "same_tool_reuses": 12,
+      "agent_tokens": 290807,
+      "simulator_tokens": 3316,
+      "total_known_tokens": 294123,
+      "total_tokens": 290807
+    },
+    "evaluation": {
+      "evaluator": "deterministic",
+      "passed": true,
+      "checks": {
+        "conversation_closed_by_user": true,
+        "assistant_produced_response": true,
+        "no_agent_error": true,
+        "tool_results_were_usable": true
+      },
+      "metrics": {
+        "assistant_turns": 1,
+        "tool_calls": 21,
+        "usable_tool_calls": 14,
+        "tool_success_rate": 0.6667,
+        "empty_tool_calls": 7,
+        "application_error_calls": 0,
+        "transport_error_calls": 0,
+        "repeated_tool_calls": 0,
+        "same_tool_reuses": 12,
+        "agent_tokens": 290807,
+        "simulator_tokens": 3316,
+        "total_known_tokens": 294123,
+        "total_tokens": 290807
+      },
+      "note": "Diagnostics are not a replacement for domain-specific or LLM-judge evaluation."
+    },
+    "tools_info": [
+      {
+        "tool": "search_arxiv",
+        "server": "Paper Search",
+        "parameters": {
+          "query": "sustainable forest management tropical India",
+          "max_results": 8
+        },
+        "round_num": 1,
+        "call_id": "11bc10d4_000001",
+        "provider_call_id": "chatcmpl-tool-a6089072e22c6e44",
+        "call_order": 1,
+        "timestamp": 1786099829.939696,
+        "server_name": "Paper Search",
+        "tool_name": "search_arxiv",
+        "tool_description": "Search academic papers from arXiv.\n\nArgs:\n    query: Search query string (e.g., 'machine learning').\n    max_results: Maximum number of papers to return (default: 10).\nReturns:\n    List of paper metadata in dictionary format.\n",
+        "tool_schema": {
+          "properties": {
+            "query": {
+              "title": "Query",
+              "type": "string"
+            },
+            "max_results": {
+              "default": 10,
+              "title": "Max Results",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "title": "search_arxivArguments",
+          "type": "object"
+        },
+        "call_statement": {
+          "query": "sustainable forest management tropical India",
+          "max_results": 8
+        },
+        "tool_call_signature": "[\"Paper Search\",\"search_arxiv\",\"{\\\"max_results\\\":8,\\\"query\\\":\\\"sustainable forest management tropical India\\\"}\"]",
+        "success": true,
+        "returned_result": "[{\"paper_id\": \"2608.06288v1\", \"title\": \"Surv-IPTB: An Attention-Based Model for Estimating Individual Probability of Treatment Benefit with Survival Data\", \"authors\": \"Lev V. Utkin; Stanislav K. Kogan; Andrei V. Konstantinov\", \"abstract\": \"This work presents a novel attention-based framework for estimating the Individual Probability of Treatment Benefit (IPTB) in survival analysis contexts. The proposed model, called Surv-IPTB, directly quantifies the probability that a specific patient will experience extended survival time under treatment versus control. We reformulate IPTB estimation as a binary classification problem, leveraging pairwise patient comparisons across treatment and control cohorts. The framework incorporates a principled handling of right-censored observations through imprecise probability representations, where uncertain treatment effects are characterized by interval-valued probabilities. An attention mechanism with learnable query-key transformations enables flexible, data-driven aggregation of pairwise comparisons, while simultaneously learning soft class probabilities for censored cases. Through extensive experiments on synthetic datasets with complex nonlinear structures, including spiral, bell-shaped, and circular feature spaces, we demonstrate that our approach maintains robust performance across varying censoring rates and treatment effect strengths. The model consistently outperforms meta-learner baselines (T-learner and S-learner) equipped with random survival forests, Cox proportional hazards, and Beran estimators, particularly in challenging nonlinear scenarios where conventional methods exhibit significant degradation. The results establish the proposed attention-based framework as a scalable and statistically principled solution for personalized treatment benefit assessment in survival settings. The code implementing the model is publicly available.\", \"doi\": \"\", \"published_date\": \"2026-08-06T17:13:44\", \"pdf_url\": \"https://arxiv.org/pdf/2608.06288v1\", \"url\": \"http://arxiv.org/abs/2608.06288v1\", \"source\": \"arxiv\", \"updated_date\": \"2026-08-06T17:13:44\", \"categories\": \"cs.LG; stat.ML\", \"keywords\": \"\", \"citations\": 0, \"references\": \"\", \"extra\": \"\"}, {\"paper_id\": \"2608.06284v1\", \"title\": \"The graded Betti numbers are not tropical invariants\", \"authors\": \"Noah Laikin\", \"abstract\": \"We show that the graded Betti numbers are not invariants of the tropicalisation of a homogeneous ideal, or the tropicalisation of a projective algebraic scheme over a valued field. We do this by producing a family of saturated ideals that all realise the same tropical ideal with one member having a distinct Betti table from the rest.\", \"doi\": \"\", \"published_date\": \"2026-08-06T17:10:33\", \"pdf_url\": \"https://arxiv.org/pdf/2608.06284v1\", \"url\": \"http://arxiv.org/abs/2608.06284v1\", \"source\": \"arxiv\", \"updated_date\": \"2026-08-06T17:10:33\", \"categories\": \"math.AG; math.AC\", \"keywords\": \"\", \"citations\": 0, \"references\": \"\", \"extra\": \"\"}, {\"paper_id\": \"2608.06228v1\", \"title\": \"Predicting Agile Success: The Critical Few Factors\", \"authors\": \"Ridewaan Hanslo; Maureen Tanner\", \"abstract\": \"While Agile projects are more successful than traditional software development project management approaches, their overall success rate remains relatively low, with a high percentage of projects still deemed challenged or failed. This low project success rate is attributed to projects not being rigorously evaluated against critical success factors (CSF) of Agile projects and contemporary project success criteria. To identify the CSF that contribute to Agile software development project success as perceived by Agile practitioners, this study used a positivist approach to investigate the CSF of Agile software development projects. PLS-SEM with SmartPLS was used to analyse the data and test the hypotheses to identify significant relationships between the constructs and project success criteria. This research found that a few critical factors significantly contribute to Agile project success. The study developed a novel model that can be used to evaluate and measure project success.\", \"doi\": \"\", \"published_date\": \"2026-08-06T16:18:13\", \"pdf_url\": \"https://arxiv.org/pdf/2608.06228v1\", \"url\": \"http://arxiv.org/abs/2608.06228v1\", \"source\": \"arxiv\", \"updated_date\": \"2026-08-06T16:18:13\", \"categories\": \"cs.SE\", \"keywords\": \"\", \"citations\": 0, \"references\": \"\", \"extra\": \"\"}, {\"paper_id\": \"2608.06219v1\", \"title\": \"Design and Evaluation of a Touchscreen-Based Teleoperation Interface for Robotic Manipulators\", \"authors\": \"Juan José García Cárdenas; Alperen Kenan; Hamidreza Raei; Paul Bremner; Manuel Giuliani; Arash Ajoudani; Adriana Tapus\", \"abstract\": \"Intuitive teleoperation interfaces are crucial for the safe and effective operation of robotic manipulators in challenging environments. In the nuclear industry, surface contact tasks such as swab sampling require precise path and force tracking, obstacle avoidance, and sustained operator attention, which conventional joystick interfaces struggle to support effectively.\\n  This study designs and evaluates a novel touchscreen teleoperation interface that maps continuous finger movements directly to robotic manipulator motions, provides finer velocity control, and integrates control with visualization, enabling more natural, precise, and intuitive surface interaction than conventional controllers. A comparative user study with 20 participants evaluated task performance and workload using the proposed touchscreen, a conventional joystick, and a single-click autonomous mode. Tasks simulated realistic surface manipulation using a Franka Emika Panda arm, remotely controlled from another country. Kinematic, physiological, and behavioral data were recorded to comprehensively assess task performance, cognitive load, and operator trust across each control condition.\\n  Participants completed teleoperation tasks more efficiently and accurately with the touchscreen interface, achieving a 53.5% reduction in completion time (median: 2.50 vs. 5.38 min), higher in-area coverage on the sinusoidal path (90.7% vs. 84.1%), and lower overshoot on both path geometries compared with the joystick. Cognitive load, quantified via NASA-TLX (0-100), decreased from joystick to touchscreen (mean TLX 52 to 43; -9 points, -17.3%) and was lowest under the autonomous one-click mode (31; -21 points vs. joystick, -40.4%; -12 vs. touchscreen, -27.9%). This research presents an easy-to-implement touchscreen interface that improves performance in teleoperated surface tasks while reducing cognitive load.\", \"doi\": \"\", \"published_date\": \"2026-08-06T16:10:02\", \"pdf_url\": \"https://arxiv.org/pdf/2608.06219v1\", \"url\": \"http://arxiv.org/abs/2608.06219v1\", \"source\": \"arxiv\", \"updated_date\": \"2026-08-06T16:10:02\", \"categories\": \"cs.RO; cs.HC\", \"keywords\": \"\", \"citations\": 0, \"references\": \"\", \"extra\": \"\"}, {\"paper_id\": \"2608.06124v1\", \"title\": \"dfence: Fine-Grained Speculation Barriers for Efficient and Effective Hardware-Software Protection in the Spectre Era (Extended Version)\", \"authors\": \"Davide Davoli; Marton Bognar; Lesly-Ann Daniel; Benjamin Grégoire; Frank Piessens; Tamara Rezk\", \"abstract\": \"Speculative execution attacks such as Spectre-PHT and Spectre-STL remain a critical security concern in modern processors. While software-based mitigations like Speculative Load Hardening (SLH) offer effective protection against Spectre-PHT, they are limited in scope and require software-managed speculative masks, which can be error-prone and costly. Defenses against Spectre-STL, such as the Speculative Store Bypass Disable bit (SSBD), incur additional performance overhead and lack fine-grained control. In this work, we introduce dfence, a new CPU instruction that generalizes SLH to mitigate both Spectre-PHT and Spectre-STL with minimal hardware support. dfence enables developers to annotate sensitive registers, with the hardware ensuring that these values do not leak transiently. We implement dfence in the Proteus CPU and evaluate its security and performance, demonstrating less than 1% average performance overhead for our benchmarks. In addition, to support easy and secure adoption, we design a type system that statically verifies the correct placement of dfence instructions in code.\", \"doi\": \"\", \"published_date\": \"2026-08-06T14:55:00\", \"pdf_url\": \"https://arxiv.org/pdf/2608.06124v1\", \"url\": \"http://arxiv.org/abs/2608.06124v1\", \"source\": \"arxiv\", \"updated_date\": \"2026-08-06T14:55:00\", \"categories\": \"cs.CR\", \"keywords\": \"\", \"citations\": 0, \"references\": \"\", \"extra\": \"\"}, {\"paper_id\": \"2608.06112v1\", \"title\": \"From Siloed Algorithms to Compliance-First Agentic Platforms: A Multi-Layered Architecture for Hospital AI Systems\", \"authors\": \"Manideep Dhar; Ritwik Singh; Sharat Chandra Kumar Manikonda\", \"abstract\": \"Hospitals are rapidly adopting artificial intelligence for triage, imaging, scheduling etc., yet most deployments remain isolated point solutions locked inside departmental silos, resulting in duplicated effort, hidden risks, and unrealized enterprise value. Despite explosive growth of AI in healthcare market and accelerating investment, an estimated 70-80% of healthcare AI pilots fail to scale, largely due to governance gaps, fragmented data, and missing integration blueprints. This research proposes a hospital-specific, compliance-first, Agentic AI architecture with multiple interoperable layers, extending existing hospital AI platform models with: (i) an Agent Orchestration Layer for multi-agent workflows across clinical, operational, and financial domains, (ii) a Compliance and Policy Layer that centralizes policy-as-code for HIPAA, GDPR, the EU AI Act, DISHA Act, India's DPDP Act, and ISO/IEC security and safety standards, and (iii) a Privacy-Preserving Data Fabric that plugs federated learning, differential privacy, and secure enclaves into real-world Hospital Information Management System (HIMS) flows. Using a synthetic but structurally realistic hospital dataset and an open, ready-to-deploy prototype implementation, this study demonstrates the end-to-end orchestration of triage risk prediction, workflow optimization, and compliance logging, achieving substantial simulated reductions in task turnaround times and manual documentation effort while maintaining policy-guarded data access. The resulting architecture offers hospital leaders a pragmatic blueprint to move from ad hoc tools to a governed, globally compliant, ROI-focused AI platform that can be tailored to on-premise, hybrid and cloud-native deployments.\", \"doi\": \"\", \"published_date\": \"2026-08-06T14:44:31\", \"pdf_url\": \"https://arxiv.org/pdf/2608.06112v1\", \"url\": \"http://arxiv.org/abs/2608.06112v1\", \"source\": \"arxiv\", \"updated_date\": \"2026-08-06T14:44:31\", \"categories\": \"cs.AI; cs.CL; cs.LG; cs.MA\", \"keywords\": \"\", \"citations\": 0, \"references\": \"\", \"extra\": \"\"}, {\"paper_id\": \"2608.06110v1\", \"title\": \"ECHO: A Locally-Deployable Agentic Health Assistant with Temporal Memory, Safety Guardrails, and Speech Assessment\", \"authors\": \"Abdulkadir Külçe; Alihan Esen; Cağla Fikir; Berke Kurt; Kuzey Arar; Gökhan Ercan; Faik Boray Tek\", \"abstract\": \"This paper presents ECHO (Enhanced Care \\\\& Health Observer), a locally-deployable conversational health assistant for long-term chronic care management. ECHO integrates three complementary software modules developed under shared supervision as a unified system. The core module is an agentic chatbot built on a ReAct loop orchestrated via LangGraph, equipped with 17 clinical tools and a temporal knowledge graph for persistent cross-session memory; it achieves a 94.9\\\\% tool-execution pass rate across a 59-scenario benchmark with GPT-5 Mini. A two-stage hybrid safety layer intercepts all incoming queries: a rule-based layer handles explicit crisis signals and jailbreak attempts in under 1ms, while a signed graph neural network (GNN) with APPNP-style propagation classifies boundary cases by clinical intent, achieving 88.8\\\\% accuracy and 90.6\\\\% unsafe recall on a 2,537-query annotated Turkish health dataset while outperforming zero-shot LLM baselines including Llama 3.3 70B. A multimodal speech assessment module combining Whisper acoustic encoding and BERT text encoding with cross-attention fusion estimates emotion, depression, and pain, reaching a mean macro F1 of 0.652. The full system is implemented as a web application that can run entirely on consumer hardware, with no patient data transmitted to external services, supporting compliance with GDPR and KVKK.\", \"doi\": \"\", \"published_date\": \"2026-08-06T14:44:12\", \"pdf_url\": \"https://arxiv.org/pdf/2608.06110v1\", \"url\": \"http://arxiv.org/abs/2608.06110v1\", \"source\": \"arxiv\", \"updated_date\": \"2026-08-06T14:44:12\", \"categories\": \"cs.AI; cs.CL\", \"keywords\": \"\", \"citations\": 0, \"references\": \"\", \"extra\": \"\"}, {\"paper_id\": \"2608.06082v1\", \"title\": \"Dense-Cast: A lightweight ensemble of deep learning architectures for precipitation nowcasting\", \"authors\": \"Gourav Jyoti Kalita; Hidam Kumarjit Singh\", \"abstract\": \"Proper short-term forecasting of precipitation is crucial in disaster management and preparedness. Nonetheless, the variability and nonlinearity of precipitation make short-term forecasting challenging for meteorologists. Moreover, capturing temporal dependencies in spatiotemporal data is a challenge in precipitation nowcasting. In this article, we introduce a lightweight deep learning model for half-hourly precipitation nowcasting. This model has been designed by incorporating the DenseNet architecture, residual connections, and transformer encoders for effective precipitation nowcasting with reduced model parameters. The North-Eastern region of India has been selected as the area of interest for our study. The region receives the highest precipitation during the months of June-September due to the monsoon season. The proposed model takes the previous five time-steps of half-hourly precipitation as inputs and predicts the precipitation in the next two half-hours. The GPM IMERG precipitation dataset with a 30-minute cadence has been used in this study for training and testing the model. The proposed architecture achieves best MAE of 0.235 millimetres, RMSE of 0.735 millimetres, and KGE score of 0.816 at an interval of 30 minutes.\", \"doi\": \"\", \"published_date\": \"2026-08-06T14:26:21\", \"pdf_url\": \"https://arxiv.org/pdf/2608.06082v1\", \"url\": \"http://arxiv.org/abs/2608.06082v1\", \"source\": \"arxiv\", \"updated_date\": \"2026-08-06T14:26:21\", \"categories\": \"cs.CV\", \"keywords\": \"\", \"citations\": 0, \"references\": \"\", \"extra\": \"\"}]",
+        "latency_ms": 28218.67916599149,
+        "transport_success": true,
+        "content_success": true,
+        "outcome": "success",
+        "result_source": "mcp",
+        "cache_hit": false,
+        "mcp_executed": true,
+        "duplicate_call_count": 1,
+        "result": "[{\"paper_id\": \"2608.06288v1\", \"title\": \"Surv-IPTB: An Attention-Based Model for Estimating Individual Probability of Treatment Benefit with Survival Data\", \"authors\": \"Lev V. Utkin; Stanislav K. Kogan; Andrei V. Konstantinov\", \"abstract\": \"This work presents a novel attention-based framework for estimating the Individual Probability of Treatment Benefit (IPTB) in survival analysis contexts. The proposed model, called Surv-IPTB, directly quantifies the probability that a specific patient will experience extended survival time under treatment versus control. We reformulate IPTB estimation as a binary classification problem, leveraging pairwise patient comparisons across treatment and control cohorts. The framework incorporates a principled handling of right-censored observations through imprecise probability representations, where uncertain treatment effects are characterized by interval-valued probabilities. An attention mechanism with learnable query-key transformations enables flexible, data-driven aggregation of pairwise comparisons, while simultaneously learning soft class probabilities for censored cases. Through extensive experiments on synthetic datasets with complex nonlinear structures, including spiral, bell-shaped, and circular feature spaces, we demonstrate that our approach maintains robust performance across varying censoring rates and treatment effect strengths. The model consistently outperforms meta-learner baselines (T-learner and S-learner) equipped with random survival forests, Cox proportional hazards, and Beran estimators, particularly in challenging nonlinear scenarios where conventional methods exhibit significant degradation. The results establish the proposed attention-based framework as a scalable and statistically principled solution for personalized treatment benefit assessment in survival settings. The code implementing the model is publicly available.\", \"doi\": \"\", \"published_date\": \"2026-08-06T17:13:44\", \"pdf_url\": \"https://arxiv.org/pdf/2608.06288v1\", \"url\": \"http://arxiv.org/abs/2608.06288v1\", \"source\": \"arxiv\", \"updated_date\": \"2026-08-06T17:13:44\", \"categories\": \"cs.LG; stat.ML\", \"keywords\": \"\", \"citations\": 0, \"references\": \"\", \"extra\": \"\"}, {\"paper_id\": \"2608.06284v1\", \"title\": \"The graded Betti numbers are not tropical invariants\", \"authors\": \"Noah Laikin\", \"abstract\": \"We show that the graded Betti numbers are not invariants of the tropicalisation of a homogeneous ideal, or the tropicalisation of a projective algebraic scheme over a valued field. We do this by producing a family of saturated ideals that all realise the same tropical ideal with one member having a distinct Betti table from the rest.\", \"doi\": \"\", \"published_date\": \"2026-08-06T17:10:33\", \"pdf_url\": \"https://arxiv.org/pdf/2608.06284v1\", \"url\": \"http://arxiv.org/abs/2608.06284v1\", \"source\": \"arxiv\", \"updated_date\": \"2026-08-06T17:10:33\", \"categories\": \"math.AG; math.AC\", \"keywords\": \"\", \"citations\": 0, \"references\": \"\", \"extra\": \"\"}, {\"paper_id\": \"2608.06228v1\", \"title\": \"Predicting Agile Success: The Critical Few Factors\", \"authors\": \"Ridewaan Hanslo; Maureen Tanner\", \"abstract\": \"While Agile projects are more successful than traditional software development project management approaches, their overall success rate remains relatively low, with a high percentage of projects still deemed challenged or failed. This low project success rate is attributed to projects not being rigorously evaluated against critical success factors (CSF) of Agile projects and contemporary project success criteria. To identify the CSF that contribute to Agile software development project success as perceived by Agile practitioners, this study used a positivist approach to investigate the CSF of Agile software development projects. PLS-SEM with SmartPLS was used to analyse the data and test the hypotheses to identify significant relationships between the constructs and project success criteria. This research found that a few critical factors significantly contribute to Agile project success. The study developed a novel model that can be used to evaluate and measure project success.\", \"doi\": \"\", \"published_date\": \"2026-08-06T16:18:13\", \"pdf_url\": \"https://arxiv.org/pdf/2608.06228v1\", \"url\": \"http://arxiv.org/abs/2608.06228v1\", \"source\": \"arxiv\", \"updated_date\": \"2026-08-06T16:18:13\", \"categories\": \"cs.SE\", \"keywords\": \"\", \"citations\": 0, \"references\": \"\", \"extra\": \"\"}, {\"paper_id\": \"2608.06219v1\", \"title\": \"Design and Evaluation of a Touchscreen-Based Teleoperation Interface for Robotic Manipulators\", \"authors\": \"Juan José García Cárdenas; Alperen Kenan; Hamidreza Raei; Paul Bremner; Manuel Giuliani; Arash Ajoudani; Adriana Tapus\", \"abstract\": \"Intuitive teleoperation interfaces are crucial for the safe and effective operation of robotic manipulators in challenging environments. In the nuclear industry, surface contact tasks such as swab sampling require precise path and force tracking, obstacle avoidance, and sustained operator attention, which conventional joystick interfaces struggle to support effectively.\\n  This study designs and evaluates a novel touchscreen teleoperation interface that maps continuous finger movements directly to robotic manipulator motions, provides finer velocity control, and integrates control with visualization, enabling more natural, precise, and intuitive surface interaction than conventional controllers. A comparative user study with 20 participants evaluated task performance and workload using the proposed touchscreen, a conventional joystick, and a single-click autonomous mode. Tasks simulated realistic surface manipulation using a Franka Emika Panda arm, remotely controlled from another country. Kinematic, physiological, and behavioral data were recorded to comprehensively assess task performance, cognitive load, and operator trust across each control condition.\\n  Participants completed teleoperation tasks more efficiently and accurately with the touchscreen interface, achieving a 53.5% reduction in completion time (median: 2.50 vs. 5.38 min), higher in-area coverage on the sinusoidal path (90.7% vs. 84.1%), and lower overshoot on both path geometries compared with the joystick. Cognitive load, quantified via NASA-TLX (0-100), decreased from joystick to touchscreen (mean TLX 52 to 43; -9 points, -17.3%) and was lowest under the autonomous one-click mode (31; -21 points vs. joystick, -40.4%; -12 vs. touchscreen, -27.9%). This research presents an easy-to-implement touchscreen interface that improves performance in teleoperated surface tasks while reducing cognitive load.\", \"doi\": \"\", \"published_date\": \"2026-08-06T16:10:02\", \"pdf_url\": \"https://arxiv.org/pdf/2608.06219v1\", \"url\": \"http://arxiv.org/abs/2608.06219v1\", \"source\": \"arxiv\", \"updated_date\": \"2026-08-06T16:10:02\", \"categories\": \"cs.RO; cs.HC\", \"keywords\": \"\", \"citations\": 0, \"references\": \"\", \"extra\": \"\"}, {\"paper_id\": \"2608.06124v1\", \"title\": \"dfence: Fine-Grained Speculation Barriers for Efficient and Effective Hardware-Software Protection in the Spectre Era (Extended Version)\", \"authors\": \"Davide Davoli; Marton Bognar; Lesly-Ann Daniel; Benjamin Grégoire; Frank Piessens; Tamara Rezk\", \"abstract\": \"Speculative execution attacks such as Spectre-PHT and Spectre-STL remain a critical security concern in modern processors. While software-based mitigations like Speculative Load Hardening (SLH) offer effective protection against Spectre-PHT, they are limited in scope and require software-managed speculative masks, which can be error-prone and costly. Defenses against Spectre-STL, such as the Speculative Store Bypass Disable bit (SSBD), incur additional performance overhead and lack fine-grained control. In this work, we introduce dfence, a new CPU instruction that generalizes SLH to mitigate both Spectre-PHT and Spectre-STL with minimal hardware support. dfence enables developers to annotate sensitive registers, with the hardware ensuring that these values do not leak transiently. We implement dfence in the Proteus CPU and evaluate its security and performance, demonstrating less than 1% average performance overhead for our benchmarks. In addition, to support easy and secure adoption, we design a type system that statically verifies the correct placement of dfence instructions in code.\", \"doi\": \"\", \"published_date\": \"2026-08-06T14:55:00\", \"pdf_url\": \"https://arxiv.org/pdf/2608.06124v1\", \"url\": \"http://arxiv.org/abs/2608.06124v1\", \"source\": \"arxiv\", \"updated_date\": \"2026-08-06T14:55:00\", \"categories\": \"cs.CR\", \"keywords\": \"\", \"citations\": 0, \"references\": \"\", \"extra\": \"\"}, {\"paper_id\": \"2608.06112v1\", \"title\": \"From Siloed Algorithms to Compliance-First Agentic Platforms: A Multi-Layered Architecture for Hospital AI Systems\", \"authors\": \"Manideep Dhar; Ritwik Singh; Sharat Chandra Kumar Manikonda\", \"abstract\": \"Hospitals are rapidly adopting artificial intelligence for triage, imaging, scheduling etc., yet most deployments remain isolated point solutions locked inside departmental silos, resulting in duplicated effort, hidden risks, and unrealized enterprise value. Despite explosive growth of AI in healthcare market and accelerating investment, an estimated 70-80% of healthcare AI pilots fail to scale, largely due to governance gaps, fragmented data, and missing integration blueprints. This research proposes a hospital-specific, compliance-first, Agentic AI architecture with multiple interoperable layers, extending existing hospital AI platform models with: (i) an Agent Orchestration Layer for multi-agent workflows across clinical, operational, and financial domains, (ii) a Compliance and Policy Layer that centralizes policy-as-code for HIPAA, GDPR, the EU AI Act, DISHA Act, India's DPDP Act, and ISO/IEC security and safety standards, and (iii) a Privacy-Preserving Data Fabric that plugs federated learning, differential privacy, and secure enclaves into real-world Hospital Information Management System (HIMS) flows. Using a synthetic but structurally realistic hospital dataset and an open, ready-to-deploy prototype implementation, this study demonstrates the end-to-end orchestration of triage risk prediction, workflow optimization, and compliance logging, achieving substantial simulated reductions in task turnaround times and manual documentation effort while maintaining policy-guarded data access. The resulting architecture offers hospital leaders a pragmatic blueprint to move from ad hoc tools to a governed, globally compliant, ROI-focused AI platform that can be tailored to on-premise, hybrid and cloud-native deployments.\", \"doi\": \"\", \"published_date\": \"2026-08-06T14:44:31\", \"pdf_url\": \"https://arxiv.org/pdf/2608.06112v1\", \"url\": \"http://arxiv.org/abs/2608.06112v1\", \"source\": \"arxiv\", \"updated_date\": \"2026-08-06T14:44:31\", \"categories\": \"cs.AI; cs.CL; cs.LG; cs.MA\", \"keywords\": \"\", \"citations\": 0, \"references\": \"\", \"extra\": \"\"}, {\"paper_id\": \"2608.06110v1\", \"title\": \"ECHO: A Locally-Deployable Agentic Health Assistant with Temporal Memory, Safety Guardrails, and Speech Assessment\", \"authors\": \"Abdulkadir Külçe; Alihan Esen; Cağla Fikir; Berke Kurt; Kuzey Arar; Gökhan Ercan; Faik Boray Tek\", \"abstract\": \"This paper presents ECHO (Enhanced Care \\\\& Health Observer), a locally-deployable conversational health assistant for long-term chronic care management. ECHO integrates three complementary software modules developed under shared supervision as a unified system. The core module is an agentic chatbot built on a ReAct loop orchestrated via LangGraph, equipped with 17 clinical tools and a temporal knowledge graph for persistent cross-session memory; it achieves a 94.9\\\\% tool-execution pass rate across a 59-scenario benchmark with GPT-5 Mini. A two-stage hybrid safety layer intercepts all incoming queries: a rule-based layer handles explicit crisis signals and jailbreak attempts in under 1ms, while a signed graph neural network (GNN) with APPNP-style propagation classifies boundary cases by clinical intent, achieving 88.8\\\\% accuracy and 90.6\\\\% unsafe recall on a 2,537-query annotated Turkish health dataset while outperforming zero-shot LLM baselines including Llama 3.3 70B. A multimodal speech assessment module combining Whisper acoustic encoding and BERT text encoding with cross-attention fusion estimates emotion, depression, and pain, reaching a mean macro F1 of 0.652. The full system is implemented as a web application that can run entirely on consumer hardware, with no patient data transmitted to external services, supporting compliance with GDPR and KVKK.\", \"doi\": \"\", \"published_date\": \"2026-08-06T14:44:12\", \"pdf_url\": \"https://arxiv.org/pdf/2608.06110v1\", \"url\": \"http://arxiv.org/abs/2608.06110v1\", \"source\": \"arxiv\", \"updated_date\": \"2026-08-06T14:44:12\", \"categories\": \"cs.AI; cs.CL\", \"keywords\": \"\", \"citations\": 0, \"references\": \"\", \"extra\": \"\"}, {\"paper_id\": \"2608.06082v1\", \"title\": \"Dense-Cast: A lightweight ensemble of deep learning architectures for precipitation nowcasting\", \"authors\": \"Gourav Jyoti Kalita; Hidam Kumarjit Singh\", \"abstract\": \"Proper short-term forecasting of precipitation is crucial in disaster management and preparedness. Nonetheless, the variability and nonlinearity of precipitation make short-term forecasting challenging for meteorologists. Moreover, capturing temporal dependencies in spatiotemporal data is a challenge in precipitation nowcasting. In this article, we introduce a lightweight deep learning model for half-hourly precipitation nowcasting. This model has been designed by incorporating the DenseNet architecture, residual connections, and transformer encoders for effective precipitation nowcasting with reduced model parameters. The North-Eastern region of India has been selected as the area of interest for our study. The region receives the highest precipitation during the months of June-September due to the monsoon season. The proposed model takes the previous five time-steps of half-hourly precipitation as inputs and predicts the precipitation in the next two half-hours. The GPM IMERG precipitation dataset with a 30-minute cadence has been used in this study for training and testing the model. The proposed architecture achieves best MAE of 0.235 millimetres, RMSE of 0.735 millimetres, and KGE score of 0.816 at an interval of 30 minutes.\", \"doi\": \"\", \"published_date\": \"2026-08-06T14:26:21\", \"pdf_url\": \"https://arxiv.org/pdf/2608.06082v1\", \"url\": \"http://arxiv.org/abs/2608.06082v1\", \"source\": \"arxiv\", \"updated_date\": \"2026-08-06T14:26:21\", \"categories\": \"cs.CV\", \"keywords\": \"\", \"citations\": 0, \"references\": \"\", \"extra\": \"\"}]"
+      },
+      {
+        "tool": "search_semantic",
+        "server": "Paper Search",
+        "parameters": {
+          "query": "sustainable forest management tropical India",
+          "max_results": 10
+        },
+        "round_num": 1,
+        "call_id": "11bc10d4_000002",
+        "provider_call_id": "chatcmpl-tool-9abca77f0fb16d9b",
+        "call_order": 2,
+        "timestamp": 1786099829.9401312,
+        "server_name": "Paper Search",
+        "tool_name": "search_semantic",
+        "tool_description": "Search academic papers from Semantic Scholar.\n\nArgs:\n    query: Search query string (e.g., 'machine learning').\n    year: Optional year filter (e.g., '2019', '2016-2020', '2010-', '-2015').\n    max_results: Maximum number of papers to return (default: 10).\nReturns:\n    List of paper metadata in dictionary format.\n",
+        "tool_schema": {
+          "properties": {
+            "query": {
+              "title": "Query",
+              "type": "string"
+            },
+            "year": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Year"
+            },
+            "max_results": {
+              "default": 10,
+              "title": "Max Results",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "title": "search_semanticArguments",
+          "type": "object"
+        },
+        "call_statement": {
+          "query": "sustainable forest management tropical India",
+          "max_results": 10
+        },
+        "tool_call_signature": "[\"Paper Search\",\"search_semantic\",\"{\\\"max_results\\\":10,\\\"query\\\":\\\"sustainable forest management tropical India\\\"}\"]",
+        "success": false,
+        "returned_result": "[]",
+        "latency_ms": 40456.42483298434,
+        "transport_success": true,
+        "content_success": false,
+        "outcome": "empty",
+        "result_source": "mcp",
+        "cache_hit": false,
+        "mcp_executed": true,
+        "duplicate_call_count": 1,
+        "error": "Tool returned no usable content"
+      }
+    ]
+  }
+}

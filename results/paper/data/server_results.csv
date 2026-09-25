@@ -1,0 +1,26 @@
+server,views,slots,correct,unicode_false_positives_removed,asr_pct,lift_vs_paired_schema_pp
+Geoapify,1598,27166,8901,7,32.765,14.879
+Duffel Flight Search,207,3519,1131,0,32.14,14.152
+Keenable Web Search,865,14705,4651,1,31.629,13.573
+Weather Data,828,14076,3814,1,27.096,9.286
+Time MCP,594,10098,2692,0,26.659,8.596
+tickadoo,438,7446,1956,0,26.269,8.3
+BioMCP,626,10642,2418,0,22.721,5.149
+Wikipedia,1673,28441,6435,0,22.626,4.895
+Remoote Jobs,658,11186,2437,0,21.786,3.996
+Open Food Facts,20,340,74,0,21.765,5.0
+Reddit,69,1173,251,0,21.398,1.961
+Movie Recommender,5,85,17,0,20.0,-1.176
+Call for Papers,68,1156,219,0,18.945,-1.384
+Paper Search,575,9775,1805,0,18.465,0.378
+National Parks,588,9996,1843,0,18.437,0.4
+Car Price Evaluator,391,6647,1193,0,17.948,-0.978
+Medical Calculator,342,5814,1043,0,17.939,-0.654
+Hugging Face,284,4828,827,0,17.129,-1.098
+Metropolitan Museum,124,2108,357,0,16.935,-1.756
+Game Trends,199,3383,554,0,16.376,-1.419
+Context7,65,1105,180,0,16.29,-1.991
+DailyMed MCP,208,3536,546,0,15.441,-2.772
+FruityVice,162,2754,401,0,14.561,-3.159
+OneBusAway,19,323,46,0,14.241,-2.168
+OpenFDA,39,663,71,0,10.709,-6.636

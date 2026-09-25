@@ -1,0 +1,13 @@
+{
+  "name": "privacytrace-mcp-remote-adapters",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pinned stdio adapters for PrivacyTrace's read-only remote MCP servers.",
+  "type": "module",
+  "dependencies": {
+    "@keenable/mcp": "0.1.0",
+    "@modelcontextprotocol/sdk": "1.30.0",
+    "mcp-remote": "0.1.38",
+    "undici": "7.29.0"
+  }
+}

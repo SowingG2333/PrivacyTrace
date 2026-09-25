@@ -1,0 +1,5 @@
+measure,correct,slots,asr_pct,coverage_slots,precision_pct
+Stage 1 inferred-only,5324,68000,7.829,11600,45.897
+Stage 2 on Stage 1-unresolved slots,12237,56179,21.782,,
+Schema prior on same unresolved slots,10384,56179,18.484,,
+Two-stage final,17561,68000,25.825,,

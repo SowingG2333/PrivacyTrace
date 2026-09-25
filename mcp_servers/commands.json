@@ -1,0 +1,144 @@
+{
+  "Wikipedia": {
+    "cmd": "uv run python -m wikipedia_mcp",
+    "env": [],
+    "cwd": "../wikipedia-mcp"
+  },
+  "Geoapify": {
+    "cmd": "node dist/cli.js --port 3001",
+    "env": [
+      "GEOAPIFY_API_KEY"
+    ],
+    "cwd": "../mcp-google-map",
+    "transport": "http",
+    "port": 3001,
+    "endpoint": "/mcp"
+  },
+  "BioMCP": {
+    "cmd": ".venv/bin/biomcp run",
+    "env": [
+      "NCI_API_KEY"
+    ],
+    "cwd": "../biomcp"
+  },
+  "DailyMed MCP": {
+    "cmd": "node dist/index.js",
+    "env": [],
+    "cwd": "../dailymed-mcp-server"
+  },
+  "Call for Papers": {
+    "cmd": "uv run --with-requirements requirements.txt python server.py",
+    "env": [],
+    "cwd": "../call-for-papers-mcp/call-for-papers-mcp-main"
+  },
+  "Car Price Evaluator": {
+    "cmd": "uv run --with-requirements requirements.txt python server.py",
+    "env": [],
+    "cwd": "../car-price-mcp-main"
+  },
+  "Context7": {
+    "cmd": "node dist/index.js",
+    "env": [],
+    "cwd": "../context7-mcp"
+  },
+  "FruityVice": {
+    "cmd": "python server.py",
+    "env": [],
+    "cwd": "../fruityvice-mcp"
+  },
+  "Game Trends": {
+    "cmd": "uv run --with-requirements requirements.txt python server.py",
+    "env": [],
+    "cwd": "../game-trends-mcp"
+  },
+  "Hugging Face": {
+    "cmd": "uv run --no-dev python src/huggingface/server.py",
+    "env": [
+      "HF_TOKEN"
+    ],
+    "cwd": "../huggingface-mcp-server"
+  },
+  "Duffel Flight Search": {
+    "cmd": "python server.py",
+    "env": [
+      "DUFFEL_ACCESS_TOKEN"
+    ],
+    "cwd": "../duffel-flight-mcp"
+  },
+  "Reddit": {
+    "cmd": "uv run python -m mcp_reddit.reddit_fetcher",
+    "env": [],
+    "cwd": "../mcp-reddit"
+  },
+  "Remoote Jobs": {
+    "cmd": "node run-stateless-http-mcp-proxy.mjs https://api.remoote.app/remoote/agents/mcp --ignore-tool create_apply_intent --ignore-tool create_alert --fallback-tools-file ../../config/scenario_tool_pool.json --fallback-server-name 'Remoote Jobs'",
+    "env": [],
+    "cwd": "../remote-adapters"
+  },
+  "OneBusAway": {
+    "cmd": "node run-stateless-http-mcp-proxy.mjs https://onebusaway.caseyjhand.com/mcp --fallback-tools-file ../../config/scenario_tool_pool.json --fallback-server-name OneBusAway",
+    "env": [],
+    "cwd": "../remote-adapters"
+  },
+  "tickadoo": {
+    "cmd": "node run-stateless-http-mcp-proxy.mjs https://mcp.tickadoo.com/mcp --fallback-tools-file ../../config/scenario_tool_pool.json --fallback-server-name tickadoo",
+    "env": [],
+    "cwd": "../remote-adapters"
+  },
+  "Open Food Facts": {
+    "cmd": "node run-stateless-http-mcp-proxy.mjs https://openfoodfacts.caseyjhand.com/mcp --fallback-tools-file ../../config/scenario_tool_pool.json --fallback-server-name 'Open Food Facts'",
+    "env": [],
+    "cwd": "../remote-adapters"
+  },
+  "OpenFDA": {
+    "cmd": "node run-stateless-http-mcp-proxy.mjs https://openfda.caseyjhand.com/mcp --fallback-tools-file ../../config/scenario_tool_pool.json --fallback-server-name OpenFDA",
+    "env": [],
+    "cwd": "../remote-adapters"
+  },
+  "National Parks": {
+    "cmd": "node build/index.js",
+    "env": [
+      "NPS_API_KEY"
+    ],
+    "cwd": "../mcp-server-nationalparks"
+  },
+  "Medical Calculator": {
+    "cmd": ".venv/bin/python medcalc/__main__.py",
+    "env": [],
+    "cwd": "../medcalc"
+  },
+  "Metropolitan Museum": {
+    "cmd": "node dist/index.js",
+    "env": [],
+    "cwd": "../metmuseum-mcp"
+  },
+  "Movie Recommender": {
+    "cmd": "uv run --with-requirements requirements.txt python server.py",
+    "env": [
+      "TMDB_API_KEY"
+    ],
+    "cwd": "../movie-recommender-mcp/movie-reccomender-mcp"
+  },
+  "Paper Search": {
+    "cmd": ".venv/bin/python -m paper_search_mcp.server",
+    "env": [],
+    "cwd": "../paper-search-mcp"
+  },
+  "Weather Data": {
+    "cmd": "uv run --with-requirements requirements.txt python server.py",
+    "env": [
+      "WEATHER_API_KEY"
+    ],
+    "cwd": "../weather_mcp"
+  },
+  "Keenable Web Search": {
+    "cmd": "node run-keenable.mjs --fallback-tools-file ../../config/scenario_tool_pool.json --fallback-server-name 'Keenable Web Search'",
+    "env": [],
+    "cwd": "../remote-adapters"
+  },
+  "Time MCP": {
+    "cmd": "uv run python -m mcp_server_time",
+    "env": [],
+    "cwd": "../time-mcp"
+  }
+}

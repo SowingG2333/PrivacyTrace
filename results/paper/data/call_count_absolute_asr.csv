@@ -1,0 +1,7 @@
+visible_calls,view_count,profile_count,catalog_correct,catalog_slots,catalog_asr_pct,paired_schema_correct,paired_schema_slots,paired_schema_asr_pct,lift_percentage_points,unicode_false_positives_removed
+0,55,54,130,935,13.904,171,935,18.289,-4.385,0
+1--5,540,453,1916,9180,20.871,1652,9180,17.996,2.875,0
+6--10,866,626,3583,14722,24.338,2697,14722,18.32,6.018,1
+11--20,1479,839,7036,25143,27.984,4523,25143,17.989,9.995,1
+21--40,948,674,4716,16116,29.263,2839,16116,17.616,11.647,2
+41+,101,100,471,1717,27.432,307,1717,17.88,9.552,0

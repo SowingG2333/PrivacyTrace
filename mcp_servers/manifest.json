@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "release": "iclr2027-v1",
+  "policy": {
+    "vendored": "Only licensed upstream snapshots and project-maintained adapters are redistributed.",
+    "external_unlicensed": "Pinned public sources require --accept-unlicensed-upstream and remain governed by upstream rights.",
+    "tree_hash": "SHA-256 over sorted per-file SHA-256 lines using paths relative to mcp_servers/."
+  },
+  "components": {
+    "biomcp": {
+      "mode": "vendored",
+      "source_url": "https://github.com/genomoncology/biomcp",
+      "revision": "9848ccc12d3364bbfbfc8e7cf78a4cc06fc7d520",
+      "license": "MIT",
+      "tree_sha256": "dd1c0f5f1057ac27d46234077bbe990c70886a6d49324daed4d8386570f6974a"
+    },
+    "call-for-papers-mcp": {
+      "mode": "vendored",
+      "source_url": "https://github.com/iremert/call-for-papers-mcp",
+      "revision": "02cbda773f6090f99f15883bc6c022ec78cb739b",
+      "license": "MIT",
+      "tree_sha256": "7396468a74978a1f5bdd8c9bbc1044209b70f3ab4513d5fe1ddaf343a98d7aa6"
+    },
+    "context7-mcp": {
+      "mode": "vendored",
+      "source_url": "https://github.com/upstash/context7",
+      "revision": "558986c56033a01d7843c878bea31e0ea1287dd0",
+      "license": "MIT",
+      "tree_sha256": "2b8f1c65e50ab31a7edb695106b519547fb741824e9f1355e279d49e1c869d52"
+    },
+    "dailymed-mcp-server": {
+      "mode": "vendored",
+      "source_url": null,
+      "revision": "frozen-review-snapshot",
+      "license": "MIT",
+      "tree_sha256": "ff2ab175e497e074e6d64fc66fe0f2f1a93170cb292f4efb13347937de79a506"
+    },
+    "duffel-flight-mcp": {
+      "mode": "project",
+      "source_url": null,
+      "revision": "frozen-review-snapshot",
+      "license": "review-only",
+      "tree_sha256": "c85a1fe421a4f8dfcc0b8a92b8c472d8c24521f6aa5dff833aac3f2b5c50488d"
+    },
+    "huggingface-mcp-server": {
+      "mode": "vendored",
+      "source_url": "https://github.com/shreyaskarnik/huggingface-mcp-server",
+      "revision": "98a90d94bdb10241163024051da49cc8f1fcd25c",
+      "license": "MIT",
+      "tree_sha256": "60afc6d39b600c5a070bccf32e02b6b79add453555338954ff5b6e80f1e4b2cc"
+    },
+    "mcp-google-map": {
+      "mode": "vendored",
+      "source_url": null,
+      "revision": "frozen-review-snapshot",
+      "license": "MIT",
+      "tree_sha256": "f919ea8c815b670f8d5c6cfccaf7062cefed11f37232b8be51dc78e3bef51f1a"
+    },
+    "mcp-reddit": {
+      "mode": "vendored",
+      "source_url": "https://github.com/dumyCq/mcp-reddit.git",
+      "revision": "24aef4ca923d39a167db58e0b3e9335cc67fb57a",
+      "license": "MIT",
+      "tree_sha256": "c8226769b7fabf7987c04b8e752f85645eefe3006819837277bea3904196125c"
+    },
+    "mcp-server-nationalparks": {
+      "mode": "vendored",
+      "source_url": "https://github.com/KyrieTangSheng/mcp-server-nationalparks",
+      "revision": "59d06755bb566f3f62eac39b3ad8bc51d25470bf",
+      "license": "MIT",
+      "tree_sha256": "e8aa9671a025d151e4f6e43f45d8ef2c5bb17137d5bb0e789ce485ff9c3fd72f"
+    },
+    "metmuseum-mcp": {
+      "mode": "vendored",
+      "source_url": "https://github.com/mikechao/metmuseum-mcp",
+      "revision": "63e298d090107171d512877b37b668962ceff826",
+      "license": "MIT",
+      "tree_sha256": "909ae23694a3987ed443ef4c3b839f35b24103ce7739ec343b5bf3e8f6d91822"
+    },
+    "paper-search-mcp": {
+      "mode": "vendored",
+      "source_url": "https://github.com/openags/paper-search-mcp",
+      "revision": "1b790e1c6d937b24aeeb758cc62fc0b4a490dc24",
+      "license": "MIT",
+      "tree_sha256": "9f838269be2c9b5c8eb7099f5e2089e2dfe32f805015f5124b36ca2dcfd3697d"
+    },
+    "wikipedia-mcp": {
+      "mode": "vendored",
+      "source_url": "https://github.com/Rudra-ravi/wikipedia-mcp",
+      "revision": "2ade1d46fcabd23d2798277b948aa59261b54568",
+      "license": "MIT",
+      "tree_sha256": "b7992e57e48cdd97dae12397cb9982940dd0fae9b89f8a65df17d1454e7c0b81"
+    },
+    "remote-adapters": {
+      "mode": "project",
+      "source_url": null,
+      "revision": "frozen-review-snapshot",
+      "license": "review-only",
+      "tree_sha256": "5461d320748962c45b803f6ab41dea5c80ca0dbbe8600d79f2b827328a75ff6f"
+    },
+    "car-price-mcp-main": {
+      "mode": "external-unlicensed",
+      "source_url": "https://github.com/yusaaztrk/car-price-mcp-main.git",
+      "revision": "8977a80e474af24e23d6f3b48df173ff8ef595cf",
+      "license": null
+    },
+    "fruityvice-mcp": {
+      "mode": "external-unlicensed",
+      "source_url": "https://github.com/CelalKhalilov/fruityvice-mcp.git",
+      "revision": "abab3bac8bbe1cb06b854cd0caf0e68517568b81",
+      "license": null
+    },
+    "game-trends-mcp": {
+      "mode": "external-unlicensed",
+      "source_url": "https://github.com/halismertkir/game-trends-mcp.git",
+      "revision": "af3267b056f0c4ba990e5783aee3b937a3f2b273",
+      "license": null
+    },
+    "medcalc": {
+      "mode": "external-unlicensed",
+      "source_url": "https://github.com/vitaldb/medcalc.git",
+      "revision": "35001c2d7a716cdb8bd1b416e5b192507ac63e55",
+      "license": null
+    },
+    "movie-recommender-mcp": {
+      "mode": "external-unlicensed",
+      "source_url": "https://github.com/iremert/movie-recommender-mcp.git",
+      "revision": "509046d444495f0f7379701c6d4397a0bd6207a7",
+      "license": null
+    },
+    "time-mcp": {
+      "mode": "external-unlicensed",
+      "source_url": "https://github.com/dumyCq/time-mcp.git",
+      "revision": "9f0c76813fea61fd468be6b34a37f23185ce7ca9",
+      "license": null
+    },
+    "weather_mcp": {
+      "mode": "external-unlicensed",
+      "source_url": "https://github.com/HarunGuclu/weather_mcp.git",
+      "revision": "dbe9d306a4a92c2eaac48053fad8489a6a0ecd5f",
+      "license": null
+    }
+  },
+  "servers": {
+    "Geoapify": {"component": "mcp-google-map", "domains": ["travel", "health", "shopping"]},
+    "Weather Data": {"component": "weather_mcp", "domains": ["travel"]},
+    "Time MCP": {"component": "time-mcp", "domains": ["travel"]},
+    "Wikipedia": {"component": "wikipedia-mcp", "domains": ["travel", "health", "shopping", "career_learning"]},
+    "National Parks": {"component": "mcp-server-nationalparks", "domains": ["travel"]},
+    "Metropolitan Museum": {"component": "metmuseum-mcp", "domains": ["travel"]},
+    "Movie Recommender": {"component": "movie-recommender-mcp", "domains": ["travel"]},
+    "Duffel Flight Search": {"component": "duffel-flight-mcp", "domains": ["travel"]},
+    "OneBusAway": {"component": "remote-adapters", "domains": ["travel"]},
+    "tickadoo": {"component": "remote-adapters", "domains": ["travel"]},
+    "BioMCP": {"component": "biomcp", "domains": ["health"]},
+    "Medical Calculator": {"component": "medcalc", "domains": ["health"]},
+    "FruityVice": {"component": "fruityvice-mcp", "domains": ["health"]},
+    "DailyMed MCP": {"component": "dailymed-mcp-server", "domains": ["health"]},
+    "Open Food Facts": {"component": "remote-adapters", "domains": ["health"]},
+    "OpenFDA": {"component": "remote-adapters", "domains": ["health"]},
+    "Reddit": {"component": "mcp-reddit", "domains": ["shopping"]},
+    "Car Price Evaluator": {"component": "car-price-mcp-main", "domains": ["shopping"]},
+    "Game Trends": {"component": "game-trends-mcp", "domains": ["shopping"]},
+    "Keenable Web Search": {"component": "remote-adapters", "domains": ["shopping"]},
+    "Context7": {"component": "context7-mcp", "domains": ["career_learning"]},
+    "Hugging Face": {"component": "huggingface-mcp-server", "domains": ["career_learning"]},
+    "Paper Search": {"component": "paper-search-mcp", "domains": ["career_learning"]},
+    "Call for Papers": {"component": "call-for-papers-mcp", "domains": ["career_learning"]},
+    "Remoote Jobs": {"component": "remote-adapters", "domains": ["career_learning"]}
+  }
+}

@@ -1,0 +1,4 @@
+effect,delta_pp,ci95_low,ci95_high,bootstrap_samples
+Parameters over metadata,13.178,12.768,13.575,10000
+Results over metadata,10.009,9.616,10.4,10000
+Parameter-result interaction,-11.462,-11.928,-11.001,10000
